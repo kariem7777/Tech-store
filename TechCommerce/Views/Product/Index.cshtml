@@ -1,0 +1,30 @@
+﻿@model List<Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>List of Products</h1>
+@* <a href="/Department/Add" class="btn btn-success">New</a> *@
+<table class="table table-hover table-bordered">
+    <tr>
+        <th>No.</th>
+        <th>Name</th>
+        <th>Units</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Category Id</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Units</td>
+            <td>@item.Price</td>
+            <td>@item.Description</td>
+            <td>@item.CategoryId</td>
+        </tr>
+    }
+</table>
