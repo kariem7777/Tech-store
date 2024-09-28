@@ -1,0 +1,26 @@
+﻿@model ProductsSearchPagerViewModel
+
+<form method="get" asp-action="index" asp-controller="Product" class="form-inline mb-3">
+    <div class="form-group d-flex">
+        <!-- Search -->
+        <input type="text" name="searchQuery" class="form-control w-25 me-2" placeholder="Search by name"
+               value="@Model.SearchQuery" />
+
+        <!-- Filter -->
+        <select name="categoryId" class="form-control w-25 me-2">
+            <option value="0">All Categories</option>
+            @foreach (var category in Model.Categories as List<Category>)
+            {
+                if (category.Id == Model.CategoryId)
+                {
+                    <option value="@category.Id" selected>@category.Name</option>
+                }
+                else
+                {
+                    <option value="@category.Id">@category.Name</option>
+                }
+            }
+        </select>
+        <button type="submit" class="btn btn-primary ml-2">Search</button>
+    </div>
+</form>
