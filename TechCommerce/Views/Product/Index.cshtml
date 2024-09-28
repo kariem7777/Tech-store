@@ -1,10 +1,23 @@
-﻿@model List<Product>
+﻿@model ProductsSearchPagerViewModel
 
 @{
     ViewData["Title"] = "Index";
+    Pager pager = new Pager();
+
+    int pageNo = 0;
+
+    if (Model.Pager != null)
+    {
+        pager = Model.Pager;
+        pageNo = pager.CurrentPage;
+    }
 }
 
 <h1>List of Products</h1>
+
+<!-- Search and Filter form -->
+<partial name="_SearchAndCategoryFilter" model="@Model" />
+
 @* <a href="/Department/Add" class="btn btn-success">New</a> *@
 <table class="table table-hover table-bordered">
     <tr>
@@ -16,7 +29,7 @@
         <th>Category Id</th>
     </tr>
 
-    @foreach (var item in Model)
+    @foreach (var item in Model.products)
     {
         <tr>
             <td>@item.Id</td>
@@ -25,6 +38,12 @@
             <td>@item.Price</td>
             <td>@item.Description</td>
             <td>@item.CategoryId</td>
+            <td>
+                <a asp-action="ShowDetails" asp-controller="Product" asp-route-id="@item.Id" class="btn btn-success">Add To Cart</a>
+            </td>
         </tr>
     }
 </table>
+
+
+<partial name="_Pager" Model="@Model" />

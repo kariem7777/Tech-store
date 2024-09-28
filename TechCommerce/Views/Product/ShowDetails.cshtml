@@ -1,0 +1,20 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "ShowDetails";
+}
+
+<h1>Product Details</h1>
+<br />
+<div>
+    <h2>@Model.Name</h2>
+    <p><strong>ID:</strong> @Model.Id</p>
+    <p><strong>Name:</strong> @Model.Name</p>
+    <p><strong>Units:</strong> @Model.Units</p>
+    <p><strong>Price:</strong> @Model.Price</p>
+    <p><strong>Description:</strong> @Model.Description</p>
+
+    <a asp-action="" asp-controller="Product" asp-route-id="@Model.Id" class="btn btn-success">Add To Cart</a>
+</div>
+
+<a asp-action="Index" asp-controller="Product" class="btn btn-secondary">Back to List</a>
