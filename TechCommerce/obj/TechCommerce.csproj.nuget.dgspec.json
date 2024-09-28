@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kariem\\source\\repos\\TechCommerce\\TechCommerce\\TechCommerce.csproj": {}
+    "D:\\Courses\\.NET DEPI\\Project\\Tech-store\\TechCommerce\\TechCommerce.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kariem\\source\\repos\\TechCommerce\\TechCommerce\\TechCommerce.csproj": {
+    "D:\\Courses\\.NET DEPI\\Project\\Tech-store\\TechCommerce\\TechCommerce.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kariem\\source\\repos\\TechCommerce\\TechCommerce\\TechCommerce.csproj",
+        "projectUniqueName": "D:\\Courses\\.NET DEPI\\Project\\Tech-store\\TechCommerce\\TechCommerce.csproj",
         "projectName": "TechCommerce",
-        "projectPath": "C:\\Users\\kariem\\source\\repos\\TechCommerce\\TechCommerce\\TechCommerce.csproj",
-        "packagesPath": "C:\\Users\\kariem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kariem\\source\\repos\\TechCommerce\\TechCommerce\\obj\\",
+        "projectPath": "D:\\Courses\\.NET DEPI\\Project\\Tech-store\\TechCommerce\\TechCommerce.csproj",
+        "packagesPath": "C:\\Users\\menal\\.nuget\\packages\\",
+        "outputPath": "D:\\Courses\\.NET DEPI\\Project\\Tech-store\\TechCommerce\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kariem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\menal\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -65,6 +65,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[8.0.8, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.5, )"
             }
           },
           "imports": [

@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TechCommerce")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6cf10f5ad0b1062c6f569604f2396a0d5ff8d96c")]
 [assembly: System.Reflection.AssemblyProductAttribute("TechCommerce")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TechCommerce")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
