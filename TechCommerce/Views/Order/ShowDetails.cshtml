@@ -1,0 +1,18 @@
+﻿@model Order
+
+@{
+    ViewData["Title"] = "ShowDetails";
+}
+
+<h1>Order Details</h1>
+<br />
+<div>
+    <p><strong>ID:</strong> @Model.Id</p>
+    <p><strong>Price:</strong> @Model.Price</p>
+    <p><strong>Date:</strong> @Model.Date</p>
+    <p><strong>State:</strong> @Model.State</p>
+    <p><strong>Customer Id:</strong> @Model.CustomerId</p>
+
+</div>
+
+<a asp-action="Index" asp-controller="Order" class="btn btn-secondary">Back to List</a>

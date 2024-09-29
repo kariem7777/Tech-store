@@ -1,0 +1,35 @@
+﻿@model ProductViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    SelectList categoryOptions = new SelectList(Model.Categories, "Id", "Name", Model.CategoryId);
+}
+
+<h1>Edit</h1>
+
+
+<form method="post" asp-action="SaveEdit" asp-controller="Product" asp-route-id="@Model.Id" class="text-start">
+    <partial name="_ProductLayout" Model="@Model" />
+
+    <div>
+        <label asp-for="Categories"></label>
+        <select class="form form-control" asp-for="CategoryId" asp-items="categoryOptions">
+        </select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+
+    <div class="m-3"></div>
+    <input type="submit" value="Save" class="btn btn-primary" onclick="return confirmEdit();" />
+
+</form>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+<script>
+    function confirmEdit() {
+        return confirm('Are you sure you want to save changes to this Product?');
+    }
+</script>
+

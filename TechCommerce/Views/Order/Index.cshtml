@@ -1,0 +1,62 @@
+﻿@model OrdersPagertViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Pager pager = new Pager();
+
+    int pageNo = 0;
+
+    if (Model.Pager != null)
+    {
+        pager = Model.Pager;
+        pageNo = pager.CurrentPage;
+    }
+}
+
+<h1>List of Orders</h1>
+
+<!-- Search and Filter form -->
+@* <partial name="_SearchAndCategoryFilter" model="@Model" />
+ *@
+
+<table class="table table-hover table-bordered">
+    <tr>
+        <th>No.</th>
+        <th>Total Price</th>
+        <th>Date</th>
+        <th>State</th>
+        <th>Customer Id</th>
+    </tr>
+
+    @foreach (var item in Model.orders)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Price</td>
+            <td>@item.Date</td>
+            <td>@item.State</td>
+            <td>@item.CustomerId</td>
+            <td>
+                <a asp-action="ShowDetails" asp-controller="Order" asp-route-id="@item.Id" class="btn btn-success">Details</a>
+                <a asp-action="Edit" asp-controller="Order" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+
+                <a href="#" class="btn btn-danger" onclick="return confirmDelete('@Url.Action("Delete", "Order", new { id = item.Id })');">Delete</a>
+
+            </td>
+        </tr>
+    }
+</table>
+
+
+<partial name="_OrdersPager" Model="@Model" />
+
+<script>
+    function confirmDelete(deleteUrl) {
+        var result = confirm('Warning: Are you sure you want to Delete this order?');
+        if (result) {
+            window.location.href = deleteUrl;
+            return true;
+        }
+        return false;
+    }
+</script>

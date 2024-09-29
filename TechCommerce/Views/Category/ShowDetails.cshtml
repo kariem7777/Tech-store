@@ -1,0 +1,41 @@
+﻿@model CategoryViewModel
+
+@{
+    ViewData["Title"] = "ShowDetails";
+}
+
+<br />
+<div>
+    <h2>@Model.Name</h2>
+</div>
+
+<h3>Products in this category:</h3>
+
+@if (Model.Products != null && Model.Products.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model.Products)
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>@product.Price</td>
+                    <td>@product.Description</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No products available in this category.</p>
+}
+
+<a asp-action="Index" asp-controller="Category" class="btn btn-secondary">Back to List</a>

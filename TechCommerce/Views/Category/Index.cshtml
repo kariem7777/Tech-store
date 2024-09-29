@@ -1,0 +1,42 @@
+﻿@model CategoriesSearchPagerViewModel
+
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<h1>List of Categories</h1>
+
+<a asp-controller="Category" asp-action="Add" class="btn btn-success mb-4">Add New Category</a>
+
+
+<form method="get" asp-action="index" asp-controller="Category" class="form-inline mb-3">
+    <div class="form-group d-flex">
+        <!-- Search -->
+        <input type="text" name="searchQuery" class="form-control w-25 me-2" placeholder="Search by name"
+               value="@Model.SearchQuery" />
+        <button type="submit" class="btn btn-primary ml-2">Search</button>
+    </div>
+</form>
+
+<table class="table table-hover table-bordered">
+    <tr>
+        <th>No.</th>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model.Categories)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>
+                <a asp-action="ShowDetails" asp-controller="Category" asp-route-id="@item.Id" class="btn btn-success">Details</a>
+                <a asp-action="Edit" asp-controller="Category" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                <a asp-action="Delete" asp-controller="Category" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<partial name="_CategoriesPager" Model="@Model" />

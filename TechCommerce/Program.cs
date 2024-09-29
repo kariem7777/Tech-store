@@ -17,6 +17,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddScoped<IRepository<Product>, ProductRepository>();
 builder.Services.AddScoped<IRepository<Category>, CategoryRepository>();
+builder.Services.AddScoped<IRepository<Order>, OrderRepository>();
+builder.Services.AddScoped<IRepository<Customer>, CustomerRepository>();
 
 
 // Add services to the container.
