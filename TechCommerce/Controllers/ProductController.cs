@@ -16,6 +16,7 @@ namespace TechCommerce.Controllers
             CategoryRepository = categoryRepository;
         }
 
+        // Read
         public IActionResult Index(string searchQuery = "", int categoryId = 0, int pg = 1)
         {
             List<Product> products = ProductRepository.GetAll();
@@ -56,6 +57,108 @@ namespace TechCommerce.Controllers
             Product? product = ProductRepository.GetById(id);
 
             return product != null ? View("ShowDetails", product) : NotFound();
+        }
+
+        // Create
+        public IActionResult Add()
+        {
+            ProductViewModel productViewModel = new();
+
+            productViewModel.Categories = CategoryRepository.GetAll();
+
+            return View("Add", productViewModel);
+        }
+
+        public IActionResult SaveAdd(ProductViewModel productViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                if (productViewModel.CategoryId != -1)
+                {
+                    Product product = new();
+
+                    product.Name = productViewModel.Name;
+                    product.Units = (int)productViewModel.Units;
+                    product.Price = (int)productViewModel.Price;
+                    product.Description = productViewModel.Description;
+                    product.CategoryId = productViewModel.CategoryId;
+
+                    ProductRepository.Add(product);
+                    ProductRepository.Save();
+
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    // Error Message & send to view
+                    ModelState.AddModelError("CategoryId", "Category is required");
+                }
+            }
+
+            productViewModel.Categories = CategoryRepository.GetAll();
+            return View("Add", productViewModel);
+        }
+
+        // Update
+        public IActionResult Edit(int id)
+        {
+            Product? product = ProductRepository.GetById(id);
+
+            if (product != null)
+            {
+                ProductViewModel productViewModel = new ProductViewModel
+                {
+                    Id = id,
+                    Name = product.Name,
+                    Units = product.Units,
+                    Price = product.Price,
+                    Description = product.Description,
+                    CategoryId = product.CategoryId
+                };
+
+                productViewModel.Categories = CategoryRepository.GetAll();
+
+                return View("Edit", productViewModel);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
+        public ActionResult SaveEdit(ProductViewModel productViewModel, int id)
+        {
+            if (ModelState.IsValid)
+            {
+                Product productsDB = ProductRepository.GetById(id);
+
+                if (productsDB != null)
+                {
+                    productsDB.Name = productViewModel.Name;
+                    productsDB.Units = (int)productViewModel.Units;
+                    productsDB.Price = (int)productViewModel.Price;
+                    productsDB.Description = productViewModel.Description;
+                    productsDB.CategoryId = productViewModel.CategoryId;
+
+                    ProductRepository.Update(productsDB);
+                    ProductRepository.Save();
+
+                    return RedirectToAction("Index");
+                }
+            }
+            productViewModel.Categories = CategoryRepository.GetAll();
+            return View("Edit", productViewModel);
+        }
+
+        //Delete
+        public ActionResult Delete(int id)
+        {
+            Product? product = ProductRepository.GetById(id);
+
+            ProductRepository.Delete(id);
+            ProductRepository.Save();
+
+            return RedirectToAction("Index");
         }
     }
 }

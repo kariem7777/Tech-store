@@ -1,0 +1,33 @@
+﻿@model ProductViewModel
+
+@{
+    ViewData["Title"] = "Add";
+    SelectList categoryOptions = new SelectList(Model.Categories, "Id", "Name");
+}
+
+<h1>Add a Product</h1>
+
+<form id="productForm" method="post" asp-action="SaveAdd" asp-controller="Product" class="text-start">
+    <partial name="_ProductLayout" Model="@Model" />
+
+    <div>
+        <select class="form form-control" asp-for="CategoryId" asp-items="categoryOptions">
+            <option value="-1">-- Select Category --</option>
+        </select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+
+    <div class="m-3"></div>
+
+    <input type="submit" value="Add" class="btn btn-primary" onclick="return confirmAdd();" />
+</form>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+<script>
+    function confirmAdd() {
+        return confirm('Are you sure you want to add this Product?');
+    }
+</script>

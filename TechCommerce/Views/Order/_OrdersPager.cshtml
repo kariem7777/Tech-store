@@ -1,0 +1,46 @@
+﻿@model OrdersPagertViewModel
+
+<div class="container">
+    @if (Model.Pager.TotalPages > 1)
+    {
+        <ul class="pagination justify-content-end">
+
+            @if (Model.Pager.CurrentPage > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-controller="Order" asp-action="index" asp-route-pg="1" asp-route-customerId="@Model.CustomerId">First</a>
+                </li>
+
+                <li>
+                    <a class="page-link" asp-controller="Order" asp-action="index" asp-route-pg="@(Model.Pager.CurrentPage - 1)"  asp-route-customerId="@Model.CustomerId">
+                        previous
+                    </a>
+                </li>
+            }
+
+
+            @for (var pge = Model.Pager.StartPage; pge <= Model.Pager.EndPage; pge++)
+            {
+                <li class="page-item @(pge == Model.Pager.CurrentPage ? "active" : "")">
+                    <a class="page-link" asp-controller="Order" asp-action="index" asp-route-pg="@pge"  asp-route-customerId="@Model.CustomerId">@pge</a>
+                </li>
+            }
+
+            @if (Model.Pager.CurrentPage < Model.Pager.TotalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-controller="Order" asp-action="index" asp-route-pg="@(Model.Pager.CurrentPage +1)"  asp-route-customerId="@Model.CustomerId">
+                        Next
+                    </a>
+                </li>
+
+                <li class="page-item">
+                    <a class="page-link" asp-controller="Order" asp-action="index" asp-route-pg="@(Model.Pager.TotalPages)"  asp-route-customerId="@Model.CustomerId">
+                        Last
+                    </a>
+                </li>
+            }
+        </ul>
+    }
+
+</div>

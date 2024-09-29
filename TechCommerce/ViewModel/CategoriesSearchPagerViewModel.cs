@@ -2,11 +2,10 @@
 
 namespace TechCommerce.ViewModel
 {
-    public class BaseSearchPagerViewModel
+    public class CategoriesSearchPagerViewModel
     {
         public string SearchQuery { get; set; } = "";
         public Pager? Pager { get; set; }
-
-        public string ControllerName { get; set; }
+        public List<Category> Categories { get; set; } = new List<Category>();
     }
 }
