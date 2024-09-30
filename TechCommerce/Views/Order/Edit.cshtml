@@ -1,26 +1,12 @@
-﻿@*
-@model OrderViewModel
+﻿@model Order
 
 @{
     ViewData["Title"] = "Edit";
-    SelectList customerOptions = new SelectList(Model.Customers, "Id", "Name", Model.CustomerId);
 }
 
 <h1>Edit</h1>
 
 <form method="post" asp-action="SaveEdit" asp-controller="ORder" asp-route-id="@Model.Id" class="text-start">
-
-    <div>
-        <label asp-for="Price"></label>
-        <input asp-for="Price" class="form form-control" />
-        <span asp-validation-for="Price" class="text-danger"></span>
-    </div>
-
-    <div>
-        <label asp-for="Date"></label>
-        <input asp-for="Date" class="form form-control" />
-        <span asp-validation-for="Date" class="text-danger"></span>
-    </div>
 
     <div>
         <label asp-for="State"></label>
@@ -31,13 +17,6 @@
             <option value="Canceled">Canceled</option>
         </select>
         <span asp-validation-for="State" class="text-danger"></span>
-    </div>
-
-    <div>
-        <label asp-for="Customers"></label>
-        <select class="form form-control" asp-for="CustomerId" asp-items="customerOptions">
-        </select>
-        <span asp-validation-for="CustomerId" class="text-danger"></span>
     </div>
 
     <div class="m-3"></div>
@@ -51,8 +30,7 @@
 
 <script>
     function confirmEdit() {
-        return confirm('Are you sure you want to save changes to this Order?');
+        return confirm('Are you sure you want to save changes to this Order State?');
     }
 </script>
 
-*@

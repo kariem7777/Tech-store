@@ -14,7 +14,11 @@
     <p><strong>Price:</strong> @Model.Price</p>
     <p><strong>Description:</strong> @Model.Description</p>
 
-    <a asp-action="" asp-controller="Product" asp-route-id="@Model.Id" class="btn btn-success">Add To Cart</a>
+    @if (!User.IsInRole("Admin"))
+    {
+        <a asp-action="" asp-controller="Product" asp-route-id="@Model.Id" class="btn btn-success">Add To Cart</a>
+    }
+    
 </div>
 
 <a asp-action="Index" asp-controller="Product" class="btn btn-secondary">Back to List</a>
