@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Security.Claims;
 using TechCommerce.Models;
 using TechCommerce.Repositories;
 
@@ -11,21 +12,24 @@ namespace TechCommerce.Controllers
     {
         IRepository<Order> OrderRepository;
 
-
         public OrderController(IRepository<Order> OrderRepo)  //Inject
         {
             OrderRepository = OrderRepo;
-
         }
 
         // Read
-        public IActionResult Index(String customerId = null, int pg = 1)
+        public IActionResult Index(int pg = 1)
         {
-            List<Order> orders = OrderRepository.GetAll();
+            List<Order> orders;
 
-            if (customerId != null)
+            if (User.IsInRole("Admin"))
             {
-                orders = orders.Where(p => p.CustomerId == customerId).ToList();
+                orders = OrderRepository.GetAll();
+            }
+            else
+            {
+                var customerId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                orders = OrderRepository.GetAll().Where(p => p.CustomerId == customerId).ToList();
             }
 
             const int pageSize = 8;
@@ -40,8 +44,6 @@ namespace TechCommerce.Controllers
             {
                 orders = filteredOrders,
                 Pager = pager,
-                CustomerId = customerId,
-
             };
 
             return View("Index", ordersPagertViewModel);
@@ -55,56 +57,36 @@ namespace TechCommerce.Controllers
         }
 
         // U
-        //public IActionResult Edit(int id)
-        //{
-        //    Order? order = OrderRepository.GetById(id);
+        public IActionResult Edit(int id)
+        {
+            Order? order = OrderRepository.GetById(id);
 
-        //    if (order != null)
-        //    {
-        //        OrderViewModel orderViewModel = new OrderViewModel
-        //        {
-        //            Id = id,
-        //            Price = (int?)order.Price,
-        //            Date = order.Date,
-        //            State = order.State,
-        //            CustomerId = order.CustomerId,
-                    
-        //        };
+            if (order != null)
+            {
+                return View("Edit", order);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
 
-        //        return View("Edit", orderViewModel);
-        //    }
-        //    else
-        //    {
-        //        return NotFound();
-        //    }
-        //}
+        public ActionResult SaveEdit(Order order, int id)
+        {
+            Order? orderssDB = OrderRepository.GetById(id);
 
+            if (orderssDB != null)
+            {
+                orderssDB.State = order.State;
 
-        //public ActionResult SaveEdit(OrderViewModel orderViewModel, int id)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        Order? orderssDB = OrderRepository.GetById(id);
+                OrderRepository.Update(orderssDB);
+                OrderRepository.Save();
 
-        //        if (orderssDB != null)
-        //        {
-        //            orderssDB.Price = (int)orderViewModel.Price;
-        //            orderssDB.Date = (DateTime)orderViewModel.Date;
-        //            orderssDB.CustomerId = orderViewModel.CustomerId;
-        //            orderssDB.State = orderViewModel.State;
+                return RedirectToAction("Index");
+            }
 
-
-        //            OrderRepository.Update(orderssDB);
-        //            OrderRepository.Save();
-
-        //            return RedirectToAction("Index");
-        //        }
-
-        //    }
-            
-        //    return View("Edit", orderViewModel);
-        //}
-
+            return View("Edit", order);
+        }
 
         // Delete
         public ActionResult Delete(int id)
@@ -116,6 +98,5 @@ namespace TechCommerce.Controllers
 
             return RedirectToAction("Index");
         }
-
     }
 }
