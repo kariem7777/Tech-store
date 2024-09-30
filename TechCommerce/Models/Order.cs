@@ -9,7 +9,8 @@
 
         public required String State {get;set; }
 
-        public int CustomerId { get; set; }
+        
+        public string CustomerId { get; set; }
         public required Customer Customer { get; set; }
 
         public ICollection<OrderProduct> OrPr { get; set; } = new HashSet<OrderProduct>();

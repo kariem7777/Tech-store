@@ -22,8 +22,8 @@ namespace TechCommerce.ViewModel
         public string State { get; set; }
 
         [Required(ErrorMessage = "Customer is required")]
-        public int CustomerId { get; set; }
-        public List<Customer>? Customers { get; set; }
+        public String CustomerId { get; set; }
+       
 
     }
 }

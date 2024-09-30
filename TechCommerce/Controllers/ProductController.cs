@@ -12,7 +12,7 @@ namespace TechCommerce.Controllers
 
         public ProductController(IRepository<Product> ProductRepo, IRepository<Category> categoryRepository)  //Inject
         {
-            ProductRepository = ProductRepo; 
+            ProductRepository = ProductRepo;
             CategoryRepository = categoryRepository;
         }
 
@@ -48,7 +48,7 @@ namespace TechCommerce.Controllers
                 Categories = CategoryRepository.GetAll()
             };
 
-            return View("Index", studentsPagerViewModel); 
+            return View("Index", studentsPagerViewModel);
         }
 
         [Authorize]
@@ -60,6 +60,7 @@ namespace TechCommerce.Controllers
         }
 
         // Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Add()
         {
             ProductViewModel productViewModel = new();
@@ -68,6 +69,8 @@ namespace TechCommerce.Controllers
 
             return View("Add", productViewModel);
         }
+
+        [Authorize(Roles = "Admin")]
 
         public IActionResult SaveAdd(ProductViewModel productViewModel)
         {
@@ -100,6 +103,7 @@ namespace TechCommerce.Controllers
         }
 
         // Update
+        [Authorize(Roles = "Admin")]
         public IActionResult Edit(int id)
         {
             Product? product = ProductRepository.GetById(id);
@@ -126,6 +130,7 @@ namespace TechCommerce.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult SaveEdit(ProductViewModel productViewModel, int id)
         {
             if (ModelState.IsValid)
@@ -151,6 +156,7 @@ namespace TechCommerce.Controllers
         }
 
         //Delete
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int id)
         {
             Product? product = ProductRepository.GetById(id);

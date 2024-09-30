@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using TechCommerce.Models;
 using TechCommerce.Repositories;
 
+
 namespace TechCommerce.Controllers
 {
+[Authorize(Roles = "Admin")]
     public class CategoryController : Controller
     {
         IRepository<Category> CategoryRepository;
@@ -58,7 +60,7 @@ namespace TechCommerce.Controllers
             return category != null ? View("ShowDetails", categoryViewModel) : NotFound();
         }
 
-        
+
         // Create
         public IActionResult Add()
         {
