@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using TechCommerce.Models;
 using TechCommerce.Repositories;
+using TechCommerce.ViewModel;
 
 namespace TechCommerce.Controllers
 {
@@ -39,16 +40,19 @@ namespace TechCommerce.Controllers
             int recSkip = (pg - 1) * pageSize;
             List<Product> filteredProducts = products.Skip(recSkip).Take(pager.PageSize).ToList();
 
-            ProductsSearchPagerViewModel studentsPagerViewModel = new ProductsSearchPagerViewModel()
+            ProductsViewModel ProductsPagerViewModel = new ProductsViewModel()
             {
                 products = filteredProducts,
-                Pager = pager,
-                SearchQuery = searchQuery,
+                pagerViewModel = new PagerViewModel()
+                {
+                    Pager = pager,
+                    SearchQuery = searchQuery
+                },
                 CategoryId = categoryId,
                 Categories = CategoryRepository.GetAll()
             };
 
-            return View("Index", studentsPagerViewModel);
+            return View("Index", ProductsPagerViewModel);
         }
 
         [Authorize]

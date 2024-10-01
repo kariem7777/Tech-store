@@ -36,11 +36,16 @@ namespace TechCommerce.Controllers
             int recSkip = (pg - 1) * pageSize;
             List<Category> filteredCategories = categories.Skip(recSkip).Take(pager.PageSize).ToList();
 
-            CategoriesSearchPagerViewModel viewModel = new CategoriesSearchPagerViewModel()
+            CategoriesViewModel viewModel = new CategoriesViewModel()
             {
                 Categories = filteredCategories,
-                Pager = pager,
-                SearchQuery = searchQuery
+                pagerViewModel = new PagerViewModel()
+                {
+                    Pager= pager,
+                    SearchQuery= searchQuery
+                }
+            
+            
             };
 
             return View("Index", viewModel);

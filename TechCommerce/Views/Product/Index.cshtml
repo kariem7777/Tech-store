@@ -1,14 +1,16 @@
-﻿@model ProductsSearchPagerViewModel
+﻿@model ProductsViewModel
 
 @{
     ViewData["Title"] = "Index";
+    ViewData["Controller"] = "Product";
+    ViewData["Action"] = "Index";
     Pager pager = new Pager();
 
     int pageNo = 0;
 
-    if (Model.Pager != null)
+    if (Model.pagerViewModel.Pager != null)
     {
-        pager = Model.Pager;
+        pager = Model.pagerViewModel.Pager;
         pageNo = pager.CurrentPage;
     }
 }
@@ -63,4 +65,4 @@
 </table>
 
 
-<partial name="_ProductsPager" Model="@Model" />
+<partial name="_Pager" Model="@Model.pagerViewModel" />

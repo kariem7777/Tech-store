@@ -2,10 +2,10 @@
 
 namespace TechCommerce.ViewModel
 {
-    public class ProductsSearchPagerViewModel
+    public class ProductsViewModel
     {
-        public string SearchQuery { get; set; } = "";
-        public Pager? Pager { get; set; }
+        public PagerViewModel pagerViewModel { get; set; }
+       
 
         public List<Product> products = [];
 

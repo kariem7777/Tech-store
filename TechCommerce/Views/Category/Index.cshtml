@@ -1,7 +1,11 @@
-﻿@model CategoriesSearchPagerViewModel
+﻿@model CategoriesViewModel
 
 @{
     ViewData["Title"] = "Categories";
+    
+        ViewData["Controller"] = "Category";
+        ViewData["Action"] = "Index";
+   
 }
 
 <h1>List of Categories</h1>
@@ -13,7 +17,7 @@
     <div class="form-group d-flex">
         <!-- Search -->
         <input type="text" name="searchQuery" class="form-control w-25 me-2" placeholder="Search by name"
-               value="@Model.SearchQuery" />
+               value="@Model.pagerViewModel.SearchQuery" />
         <button type="submit" class="btn btn-primary ml-2">Search</button>
     </div>
 </form>
@@ -39,4 +43,4 @@
     }
 </table>
 
-<partial name="_CategoriesPager" Model="@Model" />
+<partial name="_Pager" Model="@Model.pagerViewModel" />
