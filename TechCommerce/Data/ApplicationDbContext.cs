@@ -32,8 +32,8 @@ namespace TechCommerce.Data
         public DbSet<Category> Categories { set; get; }
         public DbSet<Cart> Carts { set; get; }
 
+        public DbSet<CartProducts> CartProducts { set; get; }
 
-
-
+        public DbSet<OrderProduct> OrderProduct { set; get; }
     }
 }

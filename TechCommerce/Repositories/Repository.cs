@@ -1,4 +1,5 @@
 ﻿using TechCommerce.Data;
+using TechCommerce.Models;
 
 namespace TechCommerce.Repositories
 {
@@ -43,6 +44,15 @@ namespace TechCommerce.Repositories
         public void Save()
         {
             context.SaveChanges();
+        }
+
+        public void RemoveProduct(CartProducts cartProduct)
+        {
+            var existingProduct = context.Set<CartProducts>().Find(cartProduct.ProductId, cartProduct.CartId);
+            if (existingProduct != null)
+            {
+                context.Set<CartProducts>().Remove(existingProduct);
+            }
         }
     }
 }

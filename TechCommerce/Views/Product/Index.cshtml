@@ -14,12 +14,11 @@
         pageNo = pager.CurrentPage;
     }
 }
-
 <h1>List of Products</h1>
 
 <!-- Search and Filter form -->
 <partial name="_SearchAndCategoryFilter" model="@Model" />
-@if (User.IsInRole("Admin")) 
+@if (User.IsInRole("Admin"))
 {
     <a asp-controller="Product" asp-action="Add" class="btn btn-success m-2 rounded">Add product</a>
 }
@@ -45,8 +44,7 @@
             <td>@item.CategoryId</td>
             @if (User.IsInRole("Admin"))
             {
-                
-                
+
                 <td>
                     <a asp-action="Edit" asp-controller="Product" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
                     <a asp-action="Delete" asp-controller="Product" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
@@ -58,7 +56,7 @@
                 <td>
                     <a asp-action="ShowDetails" asp-controller="Product" asp-route-id="@item.Id" class="btn btn-success">Add To Cart</a>
                 </td>
-               
+
             }
         </tr>
     }
