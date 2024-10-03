@@ -8485,11 +8485,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Courses\\.NET DEPI\\Project\\Tech-store\\TechCommerce\\TechCommerce.csproj",
+      "projectUniqueName": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\TechCommerce.csproj",
       "projectName": "TechCommerce",
-      "projectPath": "D:\\Courses\\.NET DEPI\\Project\\Tech-store\\TechCommerce\\TechCommerce.csproj",
+      "projectPath": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\TechCommerce.csproj",
       "packagesPath": "C:\\Users\\menal\\.nuget\\packages\\",
-      "outputPath": "D:\\Courses\\.NET DEPI\\Project\\Tech-store\\TechCommerce\\obj\\",
+      "outputPath": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\menal\\AppData\\Roaming\\NuGet\\NuGet.Config",

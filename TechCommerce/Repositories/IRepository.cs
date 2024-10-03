@@ -1,4 +1,6 @@
-﻿namespace TechCommerce.Repositories
+﻿using TechCommerce.Models;
+
+namespace TechCommerce.Repositories
 {
     public interface IRepository<T> where T : class
     {
@@ -8,5 +10,7 @@
         T GetById(int id);
         List<T> GetAll();
         void Save();
+
+        void RemoveProduct(CartProducts cartProduct);
     }
 }
