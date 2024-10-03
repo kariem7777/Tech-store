@@ -1,0 +1,121 @@
+﻿@model List<CartProductViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>My Cart</h1>
+
+@if (Model == null || !Model.Any())
+{
+    <p>Your cart is empty. Start adding products!</p>
+}
+else
+{
+    <table class="table table-hover table-bordered">
+        <tr>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Units</th>
+            <th>Description</th>
+            <th>Total Price</th>
+            <th>Action</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductId</td>
+                <td>@item.Name</td>
+                <td>
+                    <div class="input-group">
+                        <span class="input-group-text">Count</span>
+                        <button class="btn btn-outline-secondary decrement-btn" data-product-id="@item.ProductId">-</button>
+                        <input type="text" id="quantity_@item.ProductId" value="@item.Quantity" class="form-control text-center" readonly style="max-width: 60px;">
+                        <button class="btn btn-outline-secondary increment-btn" data-product-id="@item.ProductId">+</button>
+                    </div>
+                </td>
+                <td>@item.CategoryId</td>
+                @{
+                    var totalProductPrice = Math.Floor(item.Price * item.Quantity);
+                }
+                <td>$<span id="totalProductPrice_@item.ProductId">@totalProductPrice</span></td>
+                <td>
+                    <a asp-action="RemoveFromCart" asp-controller="Cart" asp-route-productId="@item.ProductId" class="btn btn-danger">Remove</a>
+                </td>
+            </tr>
+        }
+    </table>
+
+    <div class="cart-total">
+        <h3 id="totalPrice">Total Price: $@Math.Floor(((decimal)ViewBag.CartTotalPrice))</h3>
+    </div>
+}
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            function updateCart(productId, quantity, price) {
+                $("#quantity_" + productId).val(quantity);
+                var totalProductPrice = (quantity * price).toFixed(2); // Calculate total for current product
+                $("#totalProductPrice_" + productId).text(totalProductPrice);
+                updateTotalPrice(); // Update the overall cart total price
+            }
+
+            function updateTotalPrice() {
+                let totalPrice = 0;
+                $(".table-hover tbody tr").each(function () {
+                    const productPriceText = $(this).find('td:nth-child(5) span').text(); // Ensure this targets the correct span
+                    const productPrice = parseFloat(productPriceText); // Parse the text as float
+
+                    // Only add if productPrice is a valid number
+                    if (!isNaN(productPrice)) {
+                        totalPrice += productPrice; // Accumulate the total price
+                    }
+                });
+                $("#totalPrice").text("Total Price: $" + totalPrice.toFixed(2)); // Update the UI
+            }
+
+            $(".increment-btn").click(function (e) {
+                e.preventDefault();
+                var productId = $(this).data("product-id");
+
+                $.ajax({
+                    url: '/Cart/IncrementToCart',
+                    type: 'POST',
+                    data: { productId: productId },
+                    success: function () {
+                        var quantityInput = $("#quantity_" + productId);
+                        var currentQuantity = parseInt(quantityInput.val());
+                        var pricePerUnit = parseFloat($("#totalProductPrice_" + productId).text()) / currentQuantity;
+                        updateCart(productId, currentQuantity + 1, pricePerUnit);
+                    }
+                });
+            });
+
+            $(".decrement-btn").click(function (e) {
+                e.preventDefault();
+                var productId = $(this).data("product-id");
+
+                $.ajax({
+                    url: '/Cart/DecrementToCart',
+                    type: 'POST',
+                    data: { productId: productId },
+                    success: function () {
+                        var quantityInput = $("#quantity_" + productId);
+                        var currentQuantity = parseInt(quantityInput.val());
+                        var pricePerUnit = parseFloat($("#totalProductPrice_" + productId).text()) / currentQuantity;
+
+                        if (currentQuantity > 1) {
+                            updateCart(productId, currentQuantity - 1, pricePerUnit);
+                        } else {
+                            // Optionally handle case where quantity reaches 1
+                            updateCart(productId, 1, pricePerUnit);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+}

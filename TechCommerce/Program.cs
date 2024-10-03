@@ -23,6 +23,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IRepository<Product>, ProductRepository>();
 builder.Services.AddScoped<IRepository<Category>, CategoryRepository>();
 builder.Services.AddScoped<IRepository<Order>, OrderRepository>();
+builder.Services.AddScoped<IRepository<Cart>, CartRepository>();
+builder.Services.AddScoped<IRepository<CartProducts>, CartProductsRepository>();
+
 //builder.Services.AddScoped<IRepository<Customer>, CustomerRepository>();
 
 var app = builder.Build();

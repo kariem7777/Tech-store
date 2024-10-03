@@ -6,19 +6,65 @@
 
 <h1>Product Details</h1>
 <br />
+
+<!-- Alert for adding products to the cart -->
+<div class="alert alert-success alert-dismissible fade show" id="addToCartAlert" role="alert" style="display:none;">
+    Product added to cart successfully!
+</div>
+
 <div>
     <h2>@Model.Name</h2>
     <p><strong>ID:</strong> @Model.Id</p>
     <p><strong>Name:</strong> @Model.Name</p>
-    <p><strong>Units:</strong> @Model.Units</p>
-    <p><strong>Price:</strong> @Model.Price</p>
-    <p><strong>Description:</strong> @Model.Description</p>
+    <p><strong>Price:</strong> $<span id="totalPrice">@Model.Price</span></p>
+
+    <!-- Count label added before the quantity input -->
+    <div class="input-group mt-2">
+        <span class="input-group-text">Count</span>
+        <button type="button" class="btn btn-outline-secondary" onclick="decrementQuantity(@Model.Id)">-</button>
+        <input type="text" id="quantity_@Model.Id" value="1" class="form-control text-center" readonly style="max-width: 60px;">
+        <button type="button" class="btn btn-outline-secondary" onclick="incrementQuantity(@Model.Id)">+</button>
+    </div>
 
     @if (!User.IsInRole("Admin"))
     {
-        <a asp-action="" asp-controller="Product" asp-route-id="@Model.Id" class="btn btn-success">Add To Cart</a>
+        <a onclick="addToCart(@Model.Id)" class="btn btn-success mt-4">Add To Cart</a>
     }
-    
 </div>
 
-<a asp-action="Index" asp-controller="Product" class="btn btn-secondary">Back to List</a>
+@section Scripts {
+    <script type="text/javascript">
+        const updateTotalPrice = () => {
+            let quantityInput = document.getElementById('quantity_' + @Model.Id);
+            let totalPrice = @Model.Price * parseInt(quantityInput.value);
+            document.getElementById('totalPrice').innerText = totalPrice.toFixed(2);
+        }
+
+        const incrementQuantity = (productId) => {
+            let quantityInput = document.getElementById('quantity_' + productId);
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+            updateTotalPrice();
+        }
+
+        const decrementQuantity = (productId) => {
+            let quantityInput = document.getElementById('quantity_' + productId);
+            let currentValue = parseInt(quantityInput.value);
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+                updateTotalPrice();
+            }
+        }
+
+        const addToCart = (productId) => {
+            let quantity = document.getElementById('quantity_' + productId).value;
+
+            window.location.href = `/Cart/AddToCart?productId=${productId}&quantity=${quantity}`;
+
+            let alert = document.getElementById('addToCartAlert');
+            alert.style.display = 'block';
+            setTimeout(function () {
+                alert.style.display = 'none';
+            }, 2000);
+        }
+    </script>
+}

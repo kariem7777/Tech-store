@@ -8480,19 +8480,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kariem\\.nuget\\packages\\": {}
+    "C:\\Users\\menal\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\TechCommerce.csproj",
+      "projectUniqueName": "D:\\Courses\\.NET DEPI\\Tech-store\\TechCommerce\\TechCommerce.csproj",
       "projectName": "TechCommerce",
-      "projectPath": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\TechCommerce.csproj",
-      "packagesPath": "C:\\Users\\kariem\\.nuget\\packages\\",
-      "outputPath": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\obj\\",
+      "projectPath": "D:\\Courses\\.NET DEPI\\Tech-store\\TechCommerce\\TechCommerce.csproj",
+      "packagesPath": "C:\\Users\\menal\\.nuget\\packages\\",
+      "outputPath": "D:\\Courses\\.NET DEPI\\Tech-store\\TechCommerce\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kariem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\menal\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
