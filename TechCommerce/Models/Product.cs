@@ -13,6 +13,8 @@ namespace TechCommerce.Models
         [Required]
         public decimal Price { get; set; }
 
+        public string? ImageUrl { get; set; }
+
         public String? Description { get; set; }
 
         public int CategoryId { get; set; }

@@ -30,6 +30,7 @@
         <th>Units in Stock</th>
         <th>Price</th>
         <th>Description</th>
+        <th>Image</th>
         <th>Category Id</th>
     </tr>
 
@@ -49,6 +50,7 @@
 
             <td>@item.Price</td>
             <td>@item.Description</td>
+                <td><img src="@item.ImageUrl" alt="@item.Name" style="width: 150px; height: auto;" /></td>
             <td>@item.CategoryId</td>
             @if (User.IsInRole("Admin"))
             {
@@ -66,7 +68,7 @@
                         <a asp-action="ShowDetails" asp-controller="Product" asp-route-id="@item.Id" class="btn btn-success">Add To Cart</a>
                     }
                     else {
-                        <a class="btn btn-secondary disabled" aria-disabled="true">Out of Stock</a>
+                        <a class="btn btn-secondary disabled" aria-disabled="true">Add To Cart</a>
                     }
                 </td>
             }

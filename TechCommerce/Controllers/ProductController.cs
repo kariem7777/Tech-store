@@ -88,6 +88,7 @@ namespace TechCommerce.Controllers
                     product.Units = (int)productViewModel.Units;
                     product.Price = (int)productViewModel.Price;
                     product.Description = productViewModel.Description;
+                    product.ImageUrl = productViewModel.ImageUrl;
                     product.CategoryId = productViewModel.CategoryId;
 
                     ProductRepository.Add(product);
@@ -121,6 +122,7 @@ namespace TechCommerce.Controllers
                     Units = product.Units,
                     Price = product.Price,
                     Description = product.Description,
+                    ImageUrl = product.ImageUrl,
                     CategoryId = product.CategoryId
                 };
 
@@ -147,6 +149,7 @@ namespace TechCommerce.Controllers
                     productsDB.Units = (int)productViewModel.Units;
                     productsDB.Price = (int)productViewModel.Price;
                     productsDB.Description = productViewModel.Description;
+                    productsDB.ImageUrl = productViewModel.ImageUrl;
                     productsDB.CategoryId = productViewModel.CategoryId;
 
                     ProductRepository.Update(productsDB);

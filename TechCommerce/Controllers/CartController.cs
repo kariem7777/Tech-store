@@ -44,14 +44,16 @@ namespace TechCommerce.Controllers
             .Select(cp => new CartProductViewModel
             {
                 ProductId = cp.ProductId,
-                Name = cp.Product != null ? cp.Product.Name : "Unknown",
-                Units = cp.Product != null ? cp.Product.Units : 0,
-                Price = cp.Product != null ? cp.Product.Price : 0.0m,
-                Description = cp.Product != null ? cp.Product.Description : "No description",
-                CategoryId = cp.Product != null ? cp.Product.CategoryId : 0,
+                Name = cp.Product.Name ?? "Unknown",
+                Units = cp.Product.Units,
+                Price = cp.Product.Price,
+                Description = cp.Product.Description ?? "No description",
+                ImageUrl = cp.Product.ImageUrl ?? string.Empty,
+                CategoryId = cp.Product.CategoryId,
                 Quantity = cp.Quantity
             })
             .ToListAsync();
+
 
             return View(cartProducts);
         }

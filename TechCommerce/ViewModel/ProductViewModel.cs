@@ -24,6 +24,11 @@ namespace TechCommerce.ViewModel
         [StringLength(300, MinimumLength = 5, ErrorMessage = "Description cannot be shorter than 5 characters or longer than 300 characters")]
         public string Description { get; set; }
 
+        [Required(ErrorMessage = "Image URL is required")]
+        [Url(ErrorMessage = "Please enter a valid URL")]
+        public string? ImageUrl { get; set; }
+
+
         [Required(ErrorMessage = "Category is required")]
         public int CategoryId { get; set; }
         public List<Category>? Categories { get; set; }
