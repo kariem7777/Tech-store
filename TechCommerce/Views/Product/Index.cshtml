@@ -27,7 +27,7 @@
     <tr>
         <th>No.</th>
         <th>Name</th>
-        <th>Units</th>
+        <th>Units in Stock</th>
         <th>Price</th>
         <th>Description</th>
         <th>Category Id</th>
@@ -38,13 +38,20 @@
         <tr>
             <td>@item.Id</td>
             <td>@item.Name</td>
-            <td>@item.Units</td>
+            @if (item.Units > 0)
+            {
+                <td>@item.Units </td>
+            }
+            else
+            {
+                <td class="text-danger">Out of Stock</td>
+            }
+
             <td>@item.Price</td>
             <td>@item.Description</td>
             <td>@item.CategoryId</td>
             @if (User.IsInRole("Admin"))
             {
-
                 <td>
                     <a asp-action="Edit" asp-controller="Product" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
                     <a asp-action="Delete" asp-controller="Product" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
@@ -54,13 +61,17 @@
             else
             {
                 <td>
-                    <a asp-action="ShowDetails" asp-controller="Product" asp-route-id="@item.Id" class="btn btn-success">Add To Cart</a>
+                    @if (item.Units > 0)
+                    {
+                        <a asp-action="ShowDetails" asp-controller="Product" asp-route-id="@item.Id" class="btn btn-success">Add To Cart</a>
+                    }
+                    else {
+                        <a class="btn btn-secondary disabled" aria-disabled="true">Out of Stock</a>
+                    }
                 </td>
-
             }
         </tr>
     }
 </table>
-
 
 <partial name="_Pager" Model="@Model.pagerViewModel" />
