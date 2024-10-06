@@ -20,16 +20,21 @@ namespace TechCommerce.Controllers
         private readonly IRepository<CartProducts> CartprRepository;
         private readonly IRepository<Address> AddressRepository;
         private readonly IRepository<OrderProduct> OrderPrRepository;
-        public OrderController(IRepository<Order> OrderRepo,ApplicationDbContext context, UserManager<Customer> um, IRepository<Address> AddRepository, IRepository<Cart> CartRepository,
-            IRepository<OrderProduct> OrderPrRepository, IRepository<CartProducts> CartprRepository)  //Inject
+        private readonly IRepository<Product> ProductRepository;
+
+        public OrderController(IRepository<Order> OrderRepo,ApplicationDbContext context, UserManager<Customer> um, 
+            IRepository<Address> AddressRepository, IRepository<Cart> CartRepository,
+            IRepository<OrderProduct> OrderPrRepository, IRepository<CartProducts> CartprRepository,
+            IRepository<Product> ProductRepository)  //Inject
         {
             OrderRepository = OrderRepo;
             Context = context;
             Usrmanager = um;
             this.CartRepository = CartRepository;
-            AddressRepository = AddRepository;
+            this.AddressRepository = AddressRepository;
             this.OrderPrRepository = OrderPrRepository;
             this.CartprRepository = CartprRepository;
+            this.ProductRepository = ProductRepository;
         }
 
         // Read
@@ -133,8 +138,6 @@ namespace TechCommerce.Controllers
             //List<CartProducts> cartproducts = CartprRepository.GetbyIDWithProducts(user.CartId); 
             List<Address> addresses = Context.Addresses?.Where(A => A.CustomerId == user.Id).ToList()?? new List<Address>();
 
-
-
             return View(addresses);
         }
         public async Task<IActionResult> PlaceOrder(int id,String mainst,String City)
@@ -144,6 +147,7 @@ namespace TechCommerce.Controllers
             var user = await Context.Users
                 .Where(u => u.Id == userId)
                 .FirstOrDefaultAsync();
+
             Cart c = CartRepository.GetById(user.CartId);
 
             List<CartProducts> cartproducts = Context.CartProducts.Include(cp => cp.Product).Where(cp => cp.CartId == user.CartId).ToList();
@@ -159,6 +163,7 @@ namespace TechCommerce.Controllers
             };
             OrderRepository.Add(newOrder);
             OrderRepository.Save();
+
             foreach(var item in cartproducts)
             {
                 OrderProduct entry= new OrderProduct
@@ -169,13 +174,20 @@ namespace TechCommerce.Controllers
                     Product = item.Product,
                     Quantity = item.Quantity,
                     Price=item.Product.Price
-                 
-                    
                 };
                 OrderPrRepository.Add(entry);
                 CartprRepository.RemoveProduct(item);
+               
+                // Update the units in the stock 
+                Product productDb = ProductRepository.GetById(item.ProductId);
+                productDb.Units -= item.Quantity;
+                ProductRepository.Update(productDb);
+                ProductRepository.Save();
             }
+            c.totalPrice = 0;
+            CartprRepository.Save();
             OrderPrRepository.Save();
+
             TempData["success"] = "Order Placed Successfully";
             ViewBag.address= $"{mainst} | {City}";
             return View(newOrder);

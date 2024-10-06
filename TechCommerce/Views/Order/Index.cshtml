@@ -14,39 +14,44 @@
 }
 
 <h1>List of Orders</h1>
-
-
-<table class="table table-hover table-bordered">
-    <tr>
-        <th>No.</th>
-        <th>Total Price</th>
-        <th>Date</th>
-        <th>State</th>
-        <th>Customer Id</th>
-    </tr>
-
-    @foreach (var item in Model.orders)
-    {
+@if (Model.orders == null || !Model.orders.Any())
+{
+    <p>Your orders page is empty. Start making orders!</p>
+}
+else
+{
+    <table class="table table-hover table-bordered">
         <tr>
-            <td>@item.Id</td>
-            <td>@item.Price</td>
-            <td>@item.Date</td>
-            <td>@item.State</td>
-            <td>@item.CustomerId</td>
-            <td>
-                <a asp-action="ShowDetails" asp-controller="Order" asp-route-id="@item.Id" class="btn btn-success">Details</a>
-                @if (User.IsInRole("Admin"))
-                {
-                    
-                    <a asp-action="Edit" asp-controller="Order" asp-route-id="@item.Id" class="btn btn-primary">Cancel</a>
-
-                    <a href="#" class="btn btn-danger" onclick="return confirmDelete('@Url.Action("Delete", "Order", new { id = item.Id })');">Delete</a>
-                }
-
-            </td>
+            <th>No.</th>
+            <th>Total Price</th>
+            <th>Date</th>
+            <th>State</th>
+            <th>Customer Id</th>
         </tr>
-    }
-</table>
+
+        @foreach (var item in Model.orders)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Price</td>
+                <td>@item.Date</td>
+                <td>@item.State</td>
+                <td>@item.CustomerId</td>
+                <td>
+                    <a asp-action="ShowDetails" asp-controller="Order" asp-route-id="@item.Id" class="btn btn-success">Details</a>
+                    @if (User.IsInRole("Admin"))
+                    {
+
+                        <a asp-action="Edit" asp-controller="Order" asp-route-id="@item.Id" class="btn btn-primary">Cancel</a>
+
+                        <a href="#" class="btn btn-danger" onclick="return confirmDelete('@Url.Action("Delete", "Order", new { id = item.Id })');">Delete</a>
+                    }
+
+                </td>
+            </tr>
+        }
+    </table>
+}
 
 
 <partial name="_OrdersPager" Model="@Model" />
