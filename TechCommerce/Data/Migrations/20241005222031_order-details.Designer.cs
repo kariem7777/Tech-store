@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TechCommerce.Data;
 
@@ -11,9 +12,11 @@ using TechCommerce.Data;
 namespace TechCommerce.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241005222031_order-details")]
+    partial class orderdetails
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,13 +54,13 @@ namespace TechCommerce.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "e2adfc17-8685-4726-a843-71d3c1739b9d",
+                            Id = "e148eb63-b1a6-4a8b-84a4-c7357136dbe4",
                             Name = "Admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
-                            Id = "94d2708f-8dca-4c48-915d-0702a375d7d2",
+                            Id = "33b81db8-e535-4e7d-aedb-f176a8f0bfdf",
                             Name = "Client",
                             NormalizedName = "client"
                         });
@@ -173,38 +176,6 @@ namespace TechCommerce.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("TechCommerce.Models.Address", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("City")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Country")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CustomerId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("MainSt")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CustomerId");
-
-                    b.ToTable("Addresses");
-                });
-
             modelBuilder.Entity("TechCommerce.Models.Cart", b =>
                 {
                     b.Property<int>("Id")
@@ -264,6 +235,9 @@ namespace TechCommerce.Data.Migrations
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CartId")
                         .HasColumnType("int");
@@ -339,9 +313,6 @@ namespace TechCommerce.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("AddressId")
-                        .HasColumnType("int");
 
                     b.Property<string>("CustomerId")
                         .IsRequired()
@@ -465,17 +436,6 @@ namespace TechCommerce.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("TechCommerce.Models.Address", b =>
-                {
-                    b.HasOne("TechCommerce.Models.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Customer");
                 });
 
             modelBuilder.Entity("TechCommerce.Models.CartProducts", b =>

@@ -49,6 +49,7 @@ else
 
     <div class="cart-total">
         <h3 id="totalPrice">Total Price: $@Math.Floor(((decimal)ViewBag.CartTotalPrice))</h3>
+            <a asp-action="checkOut" asp-controller="Order"  class="btn btn-success">Checkout</a>
     </div>
 }
 
@@ -58,23 +59,23 @@ else
         $(document).ready(function () {
             function updateCart(productId, quantity, price) {
                 $("#quantity_" + productId).val(quantity);
-                var totalProductPrice = (quantity * price).toFixed(2); // Calculate total for current product
+                var totalProductPrice = (quantity * price).toFixed(2); 
                 $("#totalProductPrice_" + productId).text(totalProductPrice);
-                updateTotalPrice(); // Update the overall cart total price
+                updateTotalPrice(); 
             }
 
             function updateTotalPrice() {
                 let totalPrice = 0;
                 $(".table-hover tbody tr").each(function () {
-                    const productPriceText = $(this).find('td:nth-child(5) span').text(); // Ensure this targets the correct span
-                    const productPrice = parseFloat(productPriceText); // Parse the text as float
+                    const productPriceText = $(this).find('td:nth-child(5) span').text(); 
+                    const productPrice = parseFloat(productPriceText); 
 
-                    // Only add if productPrice is a valid number
+                    
                     if (!isNaN(productPrice)) {
-                        totalPrice += productPrice; // Accumulate the total price
+                        totalPrice += productPrice; 
                     }
                 });
-                $("#totalPrice").text("Total Price: $" + totalPrice.toFixed(2)); // Update the UI
+                $("#totalPrice").text("Total Price: $" + totalPrice.toFixed(2)); 
             }
 
             $(".increment-btn").click(function (e) {
@@ -110,7 +111,7 @@ else
                         if (currentQuantity > 1) {
                             updateCart(productId, currentQuantity - 1, pricePerUnit);
                         } else {
-                            // Optionally handle case where quantity reaches 1
+                            
                             updateCart(productId, 1, pricePerUnit);
                         }
                     }

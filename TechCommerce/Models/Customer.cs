@@ -8,7 +8,7 @@ namespace TechCommerce.Models
 
         [Required]
         public required int CartId { get; set; }
-        public String? Address { get; set; }
+       
         [Required]
         public  String Firstname { get; set; }
 

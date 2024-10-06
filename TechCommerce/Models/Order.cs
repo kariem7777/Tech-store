@@ -12,7 +12,9 @@
         
         public string CustomerId { get; set; }
         public required Customer Customer { get; set; }
-
+  
         public ICollection<OrderProduct> OrPr { get; set; } = new HashSet<OrderProduct>();
+        public int AddressId { get; set; }
+      
     }
 }

@@ -1,18 +1,27 @@
-﻿@model Order
+﻿@model List<OrderDetailsViewModel>
 
 @{
     ViewData["Title"] = "ShowDetails";
 }
 
 <h1>Order Details</h1>
+<h5>Total Amount:@ViewBag.totalPrice</h5>
 <br />
-<div>
-    <p><strong>ID:</strong> @Model.Id</p>
-    <p><strong>Price:</strong> @Model.Price</p>
-    <p><strong>Date:</strong> @Model.Date</p>
-    <p><strong>State:</strong> @Model.State</p>
-    <p><strong>Customer Id:</strong> @Model.CustomerId</p>
-
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <p class="card-text">
+                        <strong>Quantity:</strong> @product.Quantity<br />
+                        <strong>Price:</strong> $@product.Price
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
 </div>
 
 <a asp-action="Index" asp-controller="Order" class="btn btn-secondary">Back to List</a>

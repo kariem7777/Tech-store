@@ -35,9 +35,13 @@
             <td>@item.CustomerId</td>
             <td>
                 <a asp-action="ShowDetails" asp-controller="Order" asp-route-id="@item.Id" class="btn btn-success">Details</a>
-                <a asp-action="Edit" asp-controller="Order" asp-route-id="@item.Id" class="btn btn-primary">Cancel</a>
+                @if (User.IsInRole("Admin"))
+                {
+                    
+                    <a asp-action="Edit" asp-controller="Order" asp-route-id="@item.Id" class="btn btn-primary">Cancel</a>
 
-                <a href="#" class="btn btn-danger" onclick="return confirmDelete('@Url.Action("Delete", "Order", new { id = item.Id })');">Delete</a>
+                    <a href="#" class="btn btn-danger" onclick="return confirmDelete('@Url.Action("Delete", "Order", new { id = item.Id })');">Delete</a>
+                }
 
             </td>
         </tr>

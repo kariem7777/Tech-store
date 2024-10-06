@@ -20,11 +20,16 @@ builder.Services.AddDefaultIdentity<Customer>(options => options.SignIn.RequireC
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IRepository<Product>, ProductRepository>();
 builder.Services.AddScoped<IRepository<Category>, CategoryRepository>();
 builder.Services.AddScoped<IRepository<Order>, OrderRepository>();
 builder.Services.AddScoped<IRepository<Cart>, CartRepository>();
 builder.Services.AddScoped<IRepository<CartProducts>, CartProductsRepository>();
+builder.Services.AddScoped<IRepository<Address>, AddressRepository>();
+
+
+
 
 //builder.Services.AddScoped<IRepository<Customer>, CustomerRepository>();
 

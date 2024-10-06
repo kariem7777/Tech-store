@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TechCommerce.Data;
 
@@ -11,9 +12,11 @@ using TechCommerce.Data;
 namespace TechCommerce.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241006000028_Add-address-table")]
+    partial class Addaddresstable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,13 +54,13 @@ namespace TechCommerce.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "e2adfc17-8685-4726-a843-71d3c1739b9d",
+                            Id = "5ccdc597-3dc6-4551-8092-5982f2c3b5f6",
                             Name = "Admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
-                            Id = "94d2708f-8dca-4c48-915d-0702a375d7d2",
+                            Id = "059b2ed6-2620-440c-9957-e0631cb7d9c6",
                             Name = "Client",
                             NormalizedName = "client"
                         });
@@ -339,9 +342,6 @@ namespace TechCommerce.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("AddressId")
-                        .HasColumnType("int");
 
                     b.Property<string>("CustomerId")
                         .IsRequired()
