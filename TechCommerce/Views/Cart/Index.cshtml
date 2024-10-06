@@ -17,7 +17,7 @@ else
             <th>No.</th>
             <th>Name</th>
             <th>Units</th>
-            <th>Description</th>
+            <th>Image</th>
             <th>Total Price</th>
             <th>Action</th>
         </tr>
@@ -36,6 +36,9 @@ else
                     </div>
                     <p id="stockWarning_@item.ProductId" class="text-danger" style="display: none;">There are only @item.Units units in the store.</p>
                 </td>
+
+                <td><img src="@item.ImageUrl" alt="@item.Name" style="width: 150px; height: auto;" /></td>
+
 
                 <td>@item.CategoryId</td>
                 @{
