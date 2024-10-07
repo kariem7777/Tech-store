@@ -19,7 +19,6 @@ else
             <th>Units</th>
             <th>Image</th>
             <th>Total Price</th>
-            <th>Action</th>
         </tr>
 
         @foreach (var item in Model)
@@ -40,9 +39,8 @@ else
                 <td><img src="@item.ImageUrl" alt="@item.Name" style="width: 150px; height: auto;" /></td>
 
 
-                <td>@item.CategoryId</td>
                 @{
-                    var totalProductPrice = Math.Floor(item.Price * item.Quantity);
+                    var totalProductPrice = item.Price * item.Quantity;
                 }
                 <td>$<span id="totalProductPrice_@item.ProductId">@totalProductPrice</span></td>
                 <td>
@@ -53,8 +51,8 @@ else
     </table>
 
     <div class="cart-total">
-        <h3 id="totalPrice">Total Price: $@Math.Floor(((decimal)ViewBag.CartTotalPrice))</h3>
-        <a id="checkoutButton" asp-action="checkOut" asp-controller="Order" class="btn btn-success" >Checkout</a>
+        <h3 id="totalPrice">Total Price: $@((ViewBag.CartTotalPrice as decimal?)?.ToString("F2") ?? "0.00")</h3>
+        <a id="checkoutButton" asp-action="checkOut" asp-controller="Order" class="btn btn-success">Checkout</a>
     </div>
 }
 
@@ -64,13 +62,13 @@ else
         $(document).ready(function () {
             function updateCart(productId, quantity, price, stockUnits) {
                 $("#quantity_" + productId).val(quantity);
-                var totalProductPrice = (quantity * price).toFixed(2); 
+                var totalProductPrice = (quantity * price).toFixed(2);
                 $("#totalProductPrice_" + productId).text(totalProductPrice);
                 updateTotalPrice();
 
                 if (quantity > stockUnits) {
                     $("#stockWarning_" + productId).show();
-                    disableCheckout(); 
+                    disableCheckout();
                 } else {
                     $("#stockWarning_" + productId).hide();
                     checkCheckoutButton();
@@ -80,26 +78,26 @@ else
             function updateTotalPrice() {
                 let totalPrice = 0;
                 $(".table-hover tbody tr").each(function () {
-                    const productPriceText = $(this).find('td:nth-child(5) span').text(); 
-                    const productPrice = parseFloat(productPriceText); 
+                    const productPriceText = $(this).find('td:nth-child(5) span').text();
+                    const productPrice = parseFloat(productPriceText);
 
                     if (!isNaN(productPrice)) {
-                        totalPrice += productPrice; 
+                        totalPrice += productPrice;
                     }
                 });
-                $("#totalPrice").text("Total Price: $" + totalPrice.toFixed(2)); 
+                $("#totalPrice").text("Total Price: $" + totalPrice.toFixed(2));
             }
 
             function disableCheckout() {
-                $("#checkoutButton").addClass("disabled"); 
+                $("#checkoutButton").addClass("disabled");
             }
 
             function checkCheckoutButton() {
                 let warnings = $(".text-danger:visible").length;
                 if (warnings === 0) {
-                    $("#checkoutButton").removeClass("disabled"); 
+                    $("#checkoutButton").removeClass("disabled");
                 } else {
-                    $("#checkoutButton").addClass("disabled"); 
+                    $("#checkoutButton").addClass("disabled");
                 }
             }
 
@@ -122,7 +120,7 @@ else
                         success: function () {
                             var pricePerUnit = parseFloat($("#totalProductPrice_" + productId).text()) / currentQuantity;
                             updateCart(productId, currentQuantity + 1, pricePerUnit, stockUnits);
-                            checkCheckoutButton();  
+                            checkCheckoutButton();
                         }
                     });
                 }
@@ -148,7 +146,7 @@ else
                         } else {
                             updateCart(productId, 1, pricePerUnit, stockUnits);
                         }
-                        checkCheckoutButton();  
+                        checkCheckoutButton();
                     }
                 });
             });
@@ -162,9 +160,9 @@ else
                     $("#stockWarning_" + productId).show();
                     disableCheckout();
                 }
-        });
+            });
 
-        checkCheckoutButton();  
+            checkCheckoutButton();
         });
 
     </script>
