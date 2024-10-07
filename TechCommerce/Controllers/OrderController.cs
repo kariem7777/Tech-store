@@ -2,11 +2,17 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.DotNet.Scaffolding.Shared.CodeModifier.CodeChange;
 using Microsoft.EntityFrameworkCore;
+using Stripe;
+using Stripe.Checkout;
 using System.Security.Claims;
 using TechCommerce.Data;
 using TechCommerce.Models;
 using TechCommerce.Repositories;
+using Address = TechCommerce.Models.Address;
+using Customer = TechCommerce.Models.Customer;
+using Product = TechCommerce.Models.Product;
 
 namespace TechCommerce.Controllers
 {
@@ -142,6 +148,7 @@ namespace TechCommerce.Controllers
         }
         public async Task<IActionResult> PlaceOrder(int id,String mainst,String City)
         {
+           
             var userId = Usrmanager.GetUserId(User);
 
             var user = await Context.Users
@@ -193,5 +200,76 @@ namespace TechCommerce.Controllers
             return View(newOrder);
         }
 
+        
+        public ActionResult PaymentMethod(int id, String mainst, String City)
+        {
+            ViewBag.id = id;
+            ViewBag.mainst= mainst;
+            ViewBag.City= City;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult PaymentMethod(int id, String mainst, String City, String paymentmethod)
+        {
+            
+            if (paymentmethod == "Cash")
+            {
+                return RedirectToAction(nameof(PlaceOrder), new { id = id, mainst = mainst, city = City });
+            }
+            else
+            {
+                return RedirectToAction(nameof(CreateCheckoutSession), new { id = id, mainst = mainst, city = City });
+              
+            }
+        }
+
+       
+        public async Task<IActionResult> CreateCheckoutSession(int id, String mainst, String City)
+        {
+            var domain = "http://localhost:27980/";
+            var userId = Usrmanager.GetUserId(User);
+
+            var user = await Context.Users
+                .Where(u => u.Id == userId)
+                .FirstOrDefaultAsync();
+
+            Cart c = CartRepository.GetById(user.CartId);
+
+            List<CartProducts> cartproducts = Context.CartProducts.Include(cp => cp.Product).Where(cp => cp.CartId == user.CartId).ToList();
+            var options = new SessionCreateOptions
+            {
+                LineItems = new List<SessionLineItemOptions>(),
+                
+                Mode = "payment",
+                SuccessUrl =domain+ $"Order/PlaceOrder?id={id}&mainst={mainst}City={City}",
+                CancelUrl = domain + $"Order/CheckOut",
+            };
+
+            foreach(var item in cartproducts)
+            {
+
+                var sessionitem = new SessionLineItemOptions
+                {
+                    PriceData = new SessionLineItemPriceDataOptions
+                    {
+                        UnitAmount = (long)(item.Product.Price * 100),
+                        Currency = "usd",
+                        ProductData = new SessionLineItemPriceDataProductDataOptions
+                        {
+                            Name = item.Product.Name,
+                        },
+                    },
+                    Quantity = item.Quantity,
+                };
+                options.LineItems.Add(sessionitem);
+             
+            }
+            var service = new SessionService();
+            Session session = service.Create(options);
+
+            Response.Headers.Add("Location", session.Url);
+            return new StatusCodeResult(303);
+        }
     }
 }

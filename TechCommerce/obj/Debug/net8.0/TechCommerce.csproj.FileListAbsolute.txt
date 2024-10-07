@@ -614,7 +614,6 @@ D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\Microsoft.VisualStudio.
 D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\Mono.TextTemplating.dll
 D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\Newtonsoft.Json.dll
 D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\NuGet.Common.dll
@@ -633,14 +632,11 @@ D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\System.Composition.Host
 D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\System.Composition.Runtime.dll
 D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\System.Composition.TypedParts.dll
 D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
-D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\System.Drawing.Common.dll
 D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\System.Memory.Data.dll
 D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll
 D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\System.Runtime.Caching.dll
 D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
-D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\System.Security.Permissions.dll
-D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\System.Windows.Extensions.dll
 D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\af\Humanizer.resources.dll
 D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\ar\Humanizer.resources.dll
 D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\az\Humanizer.resources.dll
@@ -786,11 +782,7 @@ D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\runtimes\win-arm\native
 D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
-D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
-D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 D:\.Net\Project\Tech-store\TechCommerce\obj\Debug\net8.0\TechCommerce.csproj.AssemblyReference.cache
 D:\.Net\Project\Tech-store\TechCommerce\obj\Debug\net8.0\TechCommerce.GeneratedMSBuildEditorConfig.editorconfig
 D:\.Net\Project\Tech-store\TechCommerce\obj\Debug\net8.0\TechCommerce.AssemblyInfoInputs.cache
@@ -1443,3 +1435,4 @@ D:\Courses\.NET DEPI\07 - Project\Tech-store\TechCommerce\obj\Debug\net8.0\refin
 D:\Courses\.NET DEPI\07 - Project\Tech-store\TechCommerce\obj\Debug\net8.0\TechCommerce.pdb
 D:\Courses\.NET DEPI\07 - Project\Tech-store\TechCommerce\obj\Debug\net8.0\TechCommerce.genruntimeconfig.cache
 D:\Courses\.NET DEPI\07 - Project\Tech-store\TechCommerce\obj\Debug\net8.0\ref\TechCommerce.dll
+D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\Stripe.net.dll

@@ -1,0 +1,59 @@
+﻿
+
+
+<div class="container mt-5">
+    <h2>Select a Payment Method</h2>
+    <form method="post">
+        <input name="id" value="@ViewBag.id" hidden>
+        <input name="mainst" value="@ViewBag.mainst" hidden>
+        <input name="City" value="@ViewBag.City" hidden>
+        <div class="card mb-3" onclick="selectPaymentMethod('creditCard')">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="~/images/Stripe1.png" class="card-img" alt="Credit Card">
+                </div>
+                <div class="col-md-7 d-flex align-items-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Credit Card</h5>
+                        <p class="card-text">Pay with your credit card.</p>
+                    </div>
+                </div>
+                <div class="col-md-1 d-flex justify-content-center align-items-center">
+                    <input class="form-check-input" type="radio" name="paymentmethod" id="creditCard" value="Stripe">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card mb-3" onclick="selectPaymentMethod('Cash')">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="~/images/cash-on-delivery.png" class="card-img" alt="cash">
+                </div>
+                <div class="col-md-7 d-flex align-items-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Cash on delivery</h5>
+                 
+                    </div>
+                </div>
+                <div class="col-md-1 d-flex justify-content-center align-items-center">
+                    <input class="form-check-input" type="radio" name="paymentmethod" id="Cash" value="Cash">
+                </div>
+            </div>
+        </div>
+
+      
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+@*
+
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+*@
+<script>
+    function selectPaymentMethod(id) {
+        document.getElementById(id).checked = true;
+    }
+</script>
