@@ -1,25 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\.Net\\Project\\Tech-store\\",
+  "WorkspaceRootPath": "D:\\Courses\\.NET DEPI\\Tech-store\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\.net\\project\\tech-store\\techcommerce\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\courses\\.net depi\\tech-store\\techcommerce\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|solutionrelative:techcommerce\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\courses\\.net depi\\tech-store\\techcommerce\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|solutionrelative:techcommerce\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\.net\\project\\tech-store\\techcommerce\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\courses\\.net depi\\tech-store\\techcommerce\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|solutionrelative:techcommerce\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\.net\\project\\tech-store\\techcommerce\\views\\order\\paymentmethod.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\courses\\.net depi\\tech-store\\techcommerce\\views\\order\\paymentmethod.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|solutionrelative:techcommerce\\views\\order\\paymentmethod.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\.net\\project\\tech-store\\techcommerce\\views\\order\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\courses\\.net depi\\tech-store\\techcommerce\\views\\order\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|solutionrelative:techcommerce\\views\\order\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\.net\\project\\tech-store\\techcommerce\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\courses\\.net depi\\tech-store\\techcommerce\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|solutionrelative:techcommerce\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
@@ -30,72 +34,81 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\Tech-store\\TechCommerce\\Views\\Cart\\Index.cshtml",
+              "RelativeDocumentMoniker": "TechCommerce\\Views\\Cart\\Index.cshtml",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\Tech-store\\TechCommerce\\Views\\Cart\\Index.cshtml",
+              "RelativeToolTip": "TechCommerce\\Views\\Cart\\Index.cshtml",
+              "ViewState": "AgIAACUAAAAAAAAAAAAmwDAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-07T12:49:07.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\appsettings.json",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\Tech-store\\TechCommerce\\appsettings.json",
               "RelativeDocumentMoniker": "TechCommerce\\appsettings.json",
-              "ToolTip": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\appsettings.json",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\Tech-store\\TechCommerce\\appsettings.json",
               "RelativeToolTip": "TechCommerce\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-07T06:21:12.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T06:21:12.79Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\Tech-store\\TechCommerce\\Program.cs",
+              "RelativeDocumentMoniker": "TechCommerce\\Program.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\Tech-store\\TechCommerce\\Program.cs",
+              "RelativeToolTip": "TechCommerce\\Program.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAA8AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T06:17:47.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CheckOut.cshtml",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\Tech-store\\TechCommerce\\Views\\Order\\CheckOut.cshtml",
+              "RelativeDocumentMoniker": "TechCommerce\\Views\\Order\\CheckOut.cshtml",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\Tech-store\\TechCommerce\\Views\\Order\\CheckOut.cshtml",
+              "RelativeToolTip": "TechCommerce\\Views\\Order\\CheckOut.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-07T06:01:28.702Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\Program.cs",
-              "RelativeDocumentMoniker": "TechCommerce\\Program.cs",
-              "ToolTip": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\Program.cs",
-              "RelativeToolTip": "TechCommerce\\Program.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAA8AAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T06:17:47.448Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CheckOut.cshtml",
-              "DocumentMoniker": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\Views\\Order\\CheckOut.cshtml",
-              "RelativeDocumentMoniker": "TechCommerce\\Views\\Order\\CheckOut.cshtml",
-              "ToolTip": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\Views\\Order\\CheckOut.cshtml",
-              "RelativeToolTip": "TechCommerce\\Views\\Order\\CheckOut.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-07T06:01:28.702Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "OrderController.cs",
-              "DocumentMoniker": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\Controllers\\OrderController.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\Tech-store\\TechCommerce\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "TechCommerce\\Controllers\\OrderController.cs",
-              "ToolTip": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\Controllers\\OrderController.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\Tech-store\\TechCommerce\\Controllers\\OrderController.cs",
               "RelativeToolTip": "TechCommerce\\Controllers\\OrderController.cs",
-              "ViewState": "AgIAAOEAAAAAAAAAAAAmwPUAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAABcAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-07T05:42:40.264Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "PaymentMethod.cshtml",
-              "DocumentMoniker": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\Views\\Order\\PaymentMethod.cshtml",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\Tech-store\\TechCommerce\\Views\\Order\\PaymentMethod.cshtml",
               "RelativeDocumentMoniker": "TechCommerce\\Views\\Order\\PaymentMethod.cshtml",
-              "ToolTip": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\Views\\Order\\PaymentMethod.cshtml",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\Tech-store\\TechCommerce\\Views\\Order\\PaymentMethod.cshtml",
               "RelativeToolTip": "TechCommerce\\Views\\Order\\PaymentMethod.cshtml",
               "ViewState": "AgIAABsAAAAAAAAAAAAAAB4AAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-07T05:11:55.185Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T05:11:55.185Z"
             }
           ]
         }
