@@ -42,9 +42,9 @@ else
                     @if (User.IsInRole("Admin"))
                     {
 
-                        <a asp-action="Edit" asp-controller="Order" asp-route-id="@item.Id" class="btn btn-primary">Cancel</a>
+                        <a asp-action="Edit" asp-controller="Order" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
 
-                        <a href="#" class="btn btn-danger" onclick="return confirmDelete('@Url.Action("Delete", "Order", new { id = item.Id })');">Delete</a>
+                        <a href="#" class="btn btn-danger" onclick="return confirmDelete('@Url.Action("Delete", "Order", new { id = item.Id })');">Cancel</a>
                     }
 
                 </td>

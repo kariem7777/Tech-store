@@ -242,7 +242,7 @@ namespace TechCommerce.Controllers
                 LineItems = new List<SessionLineItemOptions>(),
                 
                 Mode = "payment",
-                SuccessUrl =domain+ $"Order/PlaceOrder?id={id}&mainst={mainst}City={City}",
+                SuccessUrl =domain+ $"Order/PlaceOrder?id={id}&mainst={mainst}&City={City}",
                 CancelUrl = domain + $"Order/CheckOut",
             };
 
