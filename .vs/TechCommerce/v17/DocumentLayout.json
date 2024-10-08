@@ -1,34 +1,46 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\.Net\\Project\\Tech-store\\",
+  "WorkspaceRootPath": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\.net\\project\\tech-store\\techcommerce\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|solutionrelative:techcommerce\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\courses\\.net depi\\07 - project\\tech-store\\techcommerce\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|solutionrelative:techcommerce\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\.net\\project\\tech-store\\techcommerce\\repositories\\cartproductsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\courses\\.net depi\\07 - project\\tech-store\\techcommerce\\repositories\\icartproductsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|solutionrelative:techcommerce\\repositories\\icartproductsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\courses\\.net depi\\07 - project\\tech-store\\techcommerce\\repositories\\iorderproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|solutionrelative:techcommerce\\repositories\\iorderproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\courses\\.net depi\\07 - project\\tech-store\\techcommerce\\repositories\\orderproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|solutionrelative:techcommerce\\repositories\\orderproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\courses\\.net depi\\07 - project\\tech-store\\techcommerce\\repositories\\cartproductsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|solutionrelative:techcommerce\\repositories\\cartproductsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\.net\\project\\tech-store\\techcommerce\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|solutionrelative:techcommerce\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\courses\\.net depi\\07 - project\\tech-store\\techcommerce\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|solutionrelative:techcommerce\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\.net\\project\\tech-store\\techcommerce\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|solutionrelative:techcommerce\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\courses\\.net depi\\07 - project\\tech-store\\techcommerce\\repositories\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|solutionrelative:techcommerce\\repositories\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\.net\\project\\tech-store\\techcommerce\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\courses\\.net depi\\07 - project\\tech-store\\techcommerce\\repositories\\addressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|solutionrelative:techcommerce\\repositories\\addressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\courses\\.net depi\\07 - project\\tech-store\\techcommerce\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|solutionrelative:techcommerce\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\courses\\.net depi\\07 - project\\tech-store\\techcommerce\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|solutionrelative:techcommerce\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\.net\\project\\tech-store\\techcommerce\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|solutionrelative:techcommerce\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|d:\\.net\\project\\tech-store\\techcommerce\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB9C9FE8-4DD5-41D8-891C-7D347B4A66DA}|TechCommerce\\TechCommerce.csproj|solutionrelative:techcommerce\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,97 +50,136 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "TechCommerce\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "TechCommerce\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\Repositories\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "TechCommerce\\Repositories\\GenericRepository.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\Repositories\\GenericRepository.cs",
+              "RelativeToolTip": "TechCommerce\\Repositories\\GenericRepository.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAADgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T17:45:00.605Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CartProductsRepository.cs",
-              "DocumentMoniker": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\Repositories\\CartProductsRepository.cs",
-              "RelativeDocumentMoniker": "TechCommerce\\Repositories\\CartProductsRepository.cs",
-              "ToolTip": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\Repositories\\CartProductsRepository.cs",
-              "RelativeToolTip": "TechCommerce\\Repositories\\CartProductsRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T17:39:50.361Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\Repositories\\Repository.cs",
-              "RelativeDocumentMoniker": "TechCommerce\\Repositories\\Repository.cs",
-              "ToolTip": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\Repositories\\Repository.cs",
-              "RelativeToolTip": "TechCommerce\\Repositories\\Repository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T17:40:13.686Z",
+              "WhenOpened": "2024-10-08T10:39:53.042Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Category.cs",
-              "DocumentMoniker": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\Models\\Category.cs",
-              "RelativeDocumentMoniker": "TechCommerce\\Models\\Category.cs",
-              "ToolTip": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\Models\\Category.cs",
-              "RelativeToolTip": "TechCommerce\\Models\\Category.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "IGenericRepository.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\Repositories\\IGenericRepository.cs",
+              "RelativeDocumentMoniker": "TechCommerce\\Repositories\\IGenericRepository.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\Repositories\\IGenericRepository.cs",
+              "RelativeToolTip": "TechCommerce\\Repositories\\IGenericRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T16:53:51.882Z",
+              "WhenOpened": "2024-10-08T10:37:16.025Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\Repositories\\IRepository.cs",
-              "RelativeDocumentMoniker": "TechCommerce\\Repositories\\IRepository.cs",
-              "ToolTip": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\Repositories\\IRepository.cs",
-              "RelativeToolTip": "TechCommerce\\Repositories\\IRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "IOrderProductRepository.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\Repositories\\IOrderProductRepository.cs",
+              "RelativeDocumentMoniker": "TechCommerce\\Repositories\\IOrderProductRepository.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\Repositories\\IOrderProductRepository.cs",
+              "RelativeToolTip": "TechCommerce\\Repositories\\IOrderProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T16:51:56.379Z",
+              "WhenOpened": "2024-10-08T15:32:35.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrderProductRepository.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\Repositories\\OrderProductRepository.cs",
+              "RelativeDocumentMoniker": "TechCommerce\\Repositories\\OrderProductRepository.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\Repositories\\OrderProductRepository.cs",
+              "RelativeToolTip": "TechCommerce\\Repositories\\OrderProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T15:33:12.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ICartProductsRepository.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\Repositories\\ICartProductsRepository.cs",
+              "RelativeDocumentMoniker": "TechCommerce\\Repositories\\ICartProductsRepository.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\Repositories\\ICartProductsRepository.cs",
+              "RelativeToolTip": "TechCommerce\\Repositories\\ICartProductsRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T13:53:21.928Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\Program.cs",
-              "RelativeDocumentMoniker": "TechCommerce\\Program.cs",
-              "ToolTip": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\Program.cs",
-              "RelativeToolTip": "TechCommerce\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Title": "CartProductsRepository.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\Repositories\\CartProductsRepository.cs",
+              "RelativeDocumentMoniker": "TechCommerce\\Repositories\\CartProductsRepository.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\Repositories\\CartProductsRepository.cs",
+              "RelativeToolTip": "TechCommerce\\Repositories\\CartProductsRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T16:47:41.653Z",
+              "WhenOpened": "2024-10-08T11:27:32.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AddressRepository.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\Repositories\\AddressRepository.cs",
+              "RelativeDocumentMoniker": "TechCommerce\\Repositories\\AddressRepository.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\Repositories\\AddressRepository.cs",
+              "RelativeToolTip": "TechCommerce\\Repositories\\AddressRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T15:58:10.896Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\Controllers\\OrderController.cs",
-              "RelativeDocumentMoniker": "TechCommerce\\Controllers\\OrderController.cs",
-              "ToolTip": "D:\\.Net\\Project\\Tech-store\\TechCommerce\\Controllers\\OrderController.cs",
-              "RelativeToolTip": "TechCommerce\\Controllers\\OrderController.cs",
-              "ViewState": "AgIAANYAAAAAAAAAAAAvwPgAAAAtAAAAAAAAAA==",
+              "Title": "CartController.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "TechCommerce\\Controllers\\CartController.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\Controllers\\CartController.cs",
+              "RelativeToolTip": "TechCommerce\\Controllers\\CartController.cs",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAAAKAAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T16:47:09.065Z",
+              "WhenOpened": "2024-10-08T11:08:45.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "TechCommerce\\Controllers\\OrderController.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "TechCommerce\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAQwCMAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T12:30:13.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\Program.cs",
+              "RelativeDocumentMoniker": "TechCommerce\\Program.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\Program.cs",
+              "RelativeToolTip": "TechCommerce\\Program.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAEwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T11:47:16.862Z",
               "EditorCaption": ""
             }
           ]

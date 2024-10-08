@@ -21,18 +21,13 @@ builder.Services.AddDefaultIdentity<TechCommerce.Models.Customer>(options => opt
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-builder.Services.AddScoped<IRepository<TechCommerce.Models.Product>, ProductRepository>();
-builder.Services.AddScoped<IRepository<Category>, CategoryRepository>();
-builder.Services.AddScoped<IRepository<Order>, OrderRepository>();
-builder.Services.AddScoped<IRepository<Cart>, CartRepository>();
-builder.Services.AddScoped<IRepository<CartProducts>, CartProductsRepository>();
-builder.Services.AddScoped<IRepository<TechCommerce.Models.Address>, AddressRepository>();
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+//builder.Services.AddScoped<IGenericRepository<TechCommerce.Models.Address>, AddressRepository>();
+builder.Services.AddScoped<ICartProductsRepository, CartProductsRepository>();
+builder.Services.AddScoped<IOrderProductRepository, OrderProductRepository>();
 
 
 
-
-//builder.Services.AddScoped<IRepository<Customer>, CustomerRepository>();
 StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe:SecretKey").Value;
 var app = builder.Build();
 
