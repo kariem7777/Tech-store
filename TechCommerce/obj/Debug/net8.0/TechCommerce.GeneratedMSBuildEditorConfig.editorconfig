@@ -17,159 +17,159 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TechCommerce
 build_property.RootNamespace = TechCommerce
-build_property.ProjectDir = D:\Courses\.NET DEPI\Tech-store\TechCommerce\
+build_property.ProjectDir = D:\Courses\.NET DEPI\07 - Project\Tech-store\TechCommerce\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Courses\.NET DEPI\Tech-store\TechCommerce
+build_property.MSBuildProjectDirectory = D:\Courses\.NET DEPI\07 - Project\Tech-store\TechCommerce
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Areas/Identity/Pages/Account/Login.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Areas/Identity/Pages/Account/Logout.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Areas/Identity/Pages/Account/Register.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Areas/Identity/Pages/Error.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Areas/Identity/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Areas/Identity/Pages/_ViewImports.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Cart/Index.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Category/Add.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Category/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Category/Edit.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Category/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Category/Index.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Category/ShowDetails.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Category/ShowDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcU2hvd0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Home/Index.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Home/Privacy.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Order/CheckOut.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Order/CheckOut.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ2hlY2tPdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Order/Edit.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Order/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Order/Index.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Order/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Order/PaymentMethod.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Order/PaymentMethod.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcUGF5bWVudE1ldGhvZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Order/PlaceOrder.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Order/PlaceOrder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcUGxhY2VPcmRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Order/ShowDetails.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Order/ShowDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcU2hvd0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Order/_OrdersPager.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Order/_OrdersPager.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcX09yZGVyc1BhZ2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Product/Add.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Product/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Product/Delete.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Product/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Product/Edit.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Product/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Product/Index.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Product/ShowDetails.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Product/ShowDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxTaG93RGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Product/_ProductLayout.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Product/_ProductLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxfUHJvZHVjdExheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Shared/Error.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Shared/_LoginPartial.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Shared/_Pager.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Shared/_Pager.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYWdlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Shared/_SearchAndCategoryFilter.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Shared/_SearchAndCategoryFilter.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TZWFyY2hBbmRDYXRlZ29yeUZpbHRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/User/AddAddress.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/User/AddAddress.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxBZGRBZGRyZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/_ViewImports.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/_ViewStart.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Courses/.NET DEPI/Tech-store/TechCommerce/Views/Shared/_Layout.cshtml]
+[D:/Courses/.NET DEPI/07 - Project/Tech-store/TechCommerce/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-eziworlh5o

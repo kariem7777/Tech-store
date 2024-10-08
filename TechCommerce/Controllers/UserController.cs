@@ -8,9 +8,9 @@ namespace TechCommerce.Controllers
     public class UserController : Controller
     {
         private readonly UserManager<Customer> usrmngr;
-        private readonly IRepository<Address> AddressRepository;
+        private readonly IGenericRepository<Address> AddressRepository;
 
-        public UserController(UserManager<Customer> usrmngr, IRepository<Address> addrRepo)
+        public UserController(UserManager<Customer> usrmngr, IGenericRepository<Address> addrRepo)
         {
             this.usrmngr = usrmngr;
             AddressRepository = addrRepo;

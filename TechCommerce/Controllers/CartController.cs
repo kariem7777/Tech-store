@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using TechCommerce.Data;
 using TechCommerce.Models;
 using TechCommerce.Repositories;
 
@@ -11,61 +8,46 @@ namespace TechCommerce.Controllers
 {
     public class CartController : Controller
     {
-        private readonly IRepository<Cart> CartRepository;
-        private readonly IRepository<CartProducts> CartProductRepository;
-        private readonly IRepository<Product> ProductRepository;
+        private readonly IGenericRepository<Cart> CartRepository;
+        private readonly ICartProductsRepository CartProductRepository;
+        private readonly IGenericRepository<Product> ProductRepository;
+        private readonly IGenericRepository<Customer> CustomerRepository;
         private readonly UserManager<Customer> UserManager;
-        private readonly ApplicationDbContext Context;
 
-        public CartController(IRepository<Cart> CartRepository, IRepository<CartProducts> CartProductRepository, IRepository<Product> ProductRepository, UserManager<Customer> UserManager, ApplicationDbContext Context)  // Update to Customer
+        public CartController(IGenericRepository<Cart> CartRepository,
+                                ICartProductsRepository CartProductRepository,
+                                IGenericRepository<Product> ProductRepository,
+                                IGenericRepository<Customer> CustomerRepository,
+                                UserManager<Customer> UserManager)
         {
             this.CartRepository = CartRepository;
             this.CartProductRepository = CartProductRepository;
             this.ProductRepository = ProductRepository;
             this.UserManager = UserManager;
-            this.Context = Context;
+            this.CustomerRepository = CustomerRepository;
         }
 
         public async Task<IActionResult> Index()
         {
             var userId = UserManager.GetUserId(User);
 
-            var user = await Context.Users
-                .Where(u => u.Id == userId)
-                .FirstOrDefaultAsync();
+            Customer user = CustomerRepository.GetById(userId);
 
             Cart mycart = CartRepository.GetById(user.CartId);
 
             ViewBag.CartTotalPrice = mycart.totalPrice;
 
-            List<CartProductViewModel> cartProducts = await Context.CartProducts
-            .Include(cp => cp.Product)
-            .Where(cp => cp.CartId == user.CartId)
-            .Select(cp => new CartProductViewModel
-            {
-                ProductId = cp.ProductId,
-                Name = cp.Product.Name ?? "Unknown",
-                Units = cp.Product.Units,
-                Price = cp.Product.Price,
-                Description = cp.Product.Description ?? "No description",
-                ImageUrl = cp.Product.ImageUrl ?? string.Empty,
-                CategoryId = cp.Product.CategoryId,
-                Quantity = cp.Quantity
-            })
-            .ToListAsync();
-
+            var cartProducts = await CartProductRepository.GetCartProductsAsync(user.CartId);
 
             return View(cartProducts);
         }
 
         [Authorize]
-        public async Task<IActionResult> AddToCart(int productId, int quantity = 1)
+        public IActionResult AddToCart(int productId, int quantity = 1)
         {
             var userId = UserManager.GetUserId(User);
 
-            var customer = await Context.Users
-                .Where(u => u.Id == userId)
-                .FirstOrDefaultAsync();
+            Customer customer = CustomerRepository.GetById(userId);
 
             var product = ProductRepository.GetById(productId);
 
@@ -97,16 +79,11 @@ namespace TechCommerce.Controllers
 
             return NoContent();
         }
-
-
-
-        public async Task<IActionResult> IncrementToCart(int productId)
+        public IActionResult IncrementToCart(int productId)
         {
             var userId = UserManager.GetUserId(User);
 
-            var customer = await Context.Users
-                .Where(u => u.Id == userId)
-                .FirstOrDefaultAsync();
+            Customer customer = CustomerRepository.GetById(userId);
 
             var product = ProductRepository.GetById(productId);
 
@@ -129,13 +106,11 @@ namespace TechCommerce.Controllers
             return NoContent();
         }
 
-        public async Task<IActionResult> DecrementToCart(int productId)
+        public IActionResult DecrementToCart(int productId)
         {
             var userId = UserManager.GetUserId(User);
 
-            var customer = await Context.Users
-                .Where(u => u.Id == userId)
-                .FirstOrDefaultAsync();
+            Customer customer = CustomerRepository.GetById(userId);
 
             var product = ProductRepository.GetById(productId);
 
@@ -165,9 +140,7 @@ namespace TechCommerce.Controllers
         {
             var userId = UserManager.GetUserId(User);
 
-            var customer = Context.Users
-                .Where(u => u.Id == userId)
-                .FirstOrDefault();
+            Customer customer = CustomerRepository.GetById(userId);
 
             var product = ProductRepository.GetById(productId);
 

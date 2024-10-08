@@ -8,10 +8,10 @@ namespace TechCommerce.Controllers
 {
     public class ProductController : Controller
     {
-        IRepository<Product> ProductRepository;
-        IRepository<Category> CategoryRepository;
+        IGenericRepository<Product> ProductRepository;
+        IGenericRepository<Category> CategoryRepository;
 
-        public ProductController(IRepository<Product> ProductRepo, IRepository<Category> categoryRepository)  //Inject
+        public ProductController(IGenericRepository<Product> ProductRepo, IGenericRepository<Category> categoryRepository)  //Inject
         {
             ProductRepository = ProductRepo;
             CategoryRepository = categoryRepository;
@@ -32,7 +32,7 @@ namespace TechCommerce.Controllers
                 products = products.Where(p => p.CategoryId == categoryId).ToList();
             }
 
-            const int pageSize = 8;
+            const int pageSize = 5;
             if (pg < 1)
                 pg = 1;
 

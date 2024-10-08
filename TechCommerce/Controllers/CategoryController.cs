@@ -9,10 +9,10 @@ namespace TechCommerce.Controllers
 [Authorize(Roles = "Admin")]
     public class CategoryController : Controller
     {
-        IRepository<Category> CategoryRepository;
-        IRepository<Product> ProductRepository;
+        private readonly IGenericRepository<Category> CategoryRepository;
+        private readonly IGenericRepository<Product> ProductRepository;
 
-        public CategoryController(IRepository<Category> categoryRepository, IRepository<Product> productRepository)  //Inject
+        public CategoryController(IGenericRepository<Category> categoryRepository, IGenericRepository<Product> productRepository)  //Inject
         {
             CategoryRepository = categoryRepository;
             ProductRepository = productRepository;
@@ -44,8 +44,6 @@ namespace TechCommerce.Controllers
                     Pager= pager,
                     SearchQuery= searchQuery
                 }
-            
-            
             };
 
             return View("Index", viewModel);
@@ -55,14 +53,14 @@ namespace TechCommerce.Controllers
         {
             Category? category = CategoryRepository.GetById(id);
 
-            CategoryViewModel categoryViewModel = new CategoryViewModel()
+            Category categoryObj = new Category()
             {
                 Id = category.Id,
                 Name = category.Name,
                 Products = ProductRepository.GetAll().Where(product => product.CategoryId == id).ToList()
             };
 
-            return category != null ? View("ShowDetails", categoryViewModel) : NotFound();
+            return category != null ? View("ShowDetails", categoryObj) : NotFound();
         }
 
 

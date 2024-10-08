@@ -5,7 +5,6 @@ namespace TechCommerce.ViewModel
     public class ProductsViewModel
     {
         public PagerViewModel pagerViewModel { get; set; }
-       
 
         public List<Product> products = [];
 
