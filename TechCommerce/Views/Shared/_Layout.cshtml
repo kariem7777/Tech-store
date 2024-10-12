@@ -32,14 +32,17 @@
                         <li class="nav-item px-2">
                             <a class="nav-link" asp-area="" asp-controller="Product" asp-action="Index">Featured Items</a>
                         </li>
-                        @if (SignInManager.IsSignedIn(User))
+                        @if (SignInManager.IsSignedIn(User) && !User.IsInRole("Admin"))
                         {
                             <li class="nav-item px-2">
                                 <a class="nav-link" asp-area="" asp-controller="Order" asp-action="Index">Track your order</a>
                             </li>
-                        }
+                        }                        
                         @if (User.IsInRole("Admin"))
                         {
+                            <li class="nav-item px-2">
+                                <a class="nav-link" asp-area="" asp-controller="Order" asp-action="Index">All Orders</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Category" asp-action="Index">Categories</a>
                             </li>
