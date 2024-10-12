@@ -1,7 +1,7 @@
 ﻿@model OrdersPagertViewModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "My Orders";
     Pager pager = new Pager();
 
     int pageNo = 0;
@@ -13,48 +13,75 @@
     }
 }
 
-<h1>List of Orders</h1>
-@if (Model.orders == null || !Model.orders.Any())
-{
-    <p>Your orders page is empty. Start making orders!</p>
-}
-else
-{
-    <table class="table table-hover table-bordered">
-        <tr>
-            <th>No.</th>
-            <th>Total Price</th>
-            <th>Date</th>
-            <th>State</th>
-            <th>Customer Id</th>
-        </tr>
+<style>
+    .larger-font {
+        font-size: 1.2rem; /* Adjust the value as per your requirement */
+    }
+</style>
 
-        @foreach (var item in Model.orders)
-        {
-            <tr>
-                <td>@item.Id</td>
-                <td>@item.Price</td>
-                <td>@item.Date</td>
-                <td>@item.State</td>
-                <td>@item.CustomerId</td>
-                <td>
-                    <a asp-action="ShowDetails" asp-controller="Order" asp-route-id="@item.Id" class="btn btn-success">Details</a>
-                    @if (User.IsInRole("Admin"))
+<div class="container my-4">
+    @if (User.IsInRole("Admin"))
+    {
+        <h1 class="text-center mb-4 pt-3 larger-font order-header">Orders</h1>
+    }
+    else
+    {
+        <h1 class="text-center mb-4 pt-3 larger-font order-header">Your Orders</h1>
+    }
+
+    @if (Model.orders == null || !Model.orders.Any())
+    {
+        <div class="alert alert-info text-center larger-font">
+            <p>Your orders page is empty. Start making orders!</p>
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered text-center align-middle larger-font">
+                <thead class="table-dark">
+                    <tr>
+                        <th style="font-size: 1.2rem">Total Price</th>
+                        <th>Date</th>
+                        <th>State</th>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <th>Action</th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.orders)
                     {
+                        <tr>
+                            <td>$@item.Price</td>
+                            <td>@item.Date.ToShortDateString()</td>
+                            <td>
+                                <span class="badge
+                                    @(item.State == "Processing" ? "bg-primary" :
+                                    item.State == "Shipped" ? "bg-warning" :
+                                    item.State == "Delivered" ? "bg-success" :
+                                    item.State == "Canceled" ? "bg-danger" : "bg-secondary")">
+                                    @item.State
+                                </span>
+                            </td>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <td>
+                                    <a asp-action="Edit" asp-controller="Order" asp-route-id="@item.Id" class="btn btn-outline-primary btn-sm mx-1">Edit</a>
 
-                        <a asp-action="Edit" asp-controller="Order" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
-
-                        <a href="#" class="btn btn-danger" onclick="return confirmDelete('@Url.Action("Delete", "Order", new { id = item.Id })');">Cancel</a>
+                                    <button class="btn btn-outline-danger btn-sm mx-1" onclick="return confirmDelete('@Url.Action("Delete", "Order", new { id = item.Id })');">Cancel</button>
+                                </td>
+                            }
+                        </tr>
                     }
+                </tbody>
+            </table>
+        </div>
+    }
 
-                </td>
-            </tr>
-        }
-    </table>
-}
-
-
-<partial name="_OrdersPager" Model="@Model" />
+    <partial name="_OrdersPager" Model="@Model" />
+</div>
 
 <script>
     function confirmDelete(deleteUrl) {
@@ -66,3 +93,10 @@ else
         return false;
     }
 </script>
+
+<style>
+    .order-header {
+        font-size: 1.9rem;
+        font-weight: 700
+    }
+</style>
