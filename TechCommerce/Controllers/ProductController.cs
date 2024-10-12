@@ -32,7 +32,7 @@ namespace TechCommerce.Controllers
                 products = products.Where(p => p.CategoryId == categoryId).ToList();
             }
 
-            const int pageSize = 5;
+            const int pageSize = 8;
             if (pg < 1)
                 pg = 1;
 
