@@ -1,10 +1,10 @@
 ﻿@model List<CartProductViewModel>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "My Cart";
 }
 
-<h1>My Cart</h1>
+<h1 class="pt-4 pb-3 cart-header">Your cart</h1>
 
 @if (Model == null || !Model.Any())
 {
@@ -12,47 +12,64 @@
 }
 else
 {
-    <table class="table table-hover table-bordered">
-        <tr>
-            <th>No.</th>
-            <th>Name</th>
-            <th>Units</th>
-            <th>Image</th>
-            <th>Total Price</th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.ProductId</td>
-                <td>@item.Name</td>
-                <td>
-                    <div class="input-group">
-                        <span class="input-group-text">Count</span>
-                        <button class="btn btn-outline-secondary decrement-btn" data-product-id="@item.ProductId" data-stock-units="@item.Units">-</button>
-                        <input type="text" id="quantity_@item.ProductId" value="@item.Quantity" class="form-control text-center" readonly style="max-width: 60px;">
-                        <button class="btn btn-outline-secondary increment-btn" data-product-id="@item.ProductId" data-stock-units="@item.Units">+</button>
+    <div class="cart-container">
+        <!-- Left side: Cart items -->
+        <div class="cart-items">
+            @foreach (var item in Model)
+            {
+                <div class="cart-item">
+                    <div class="item-details my-2">
+                        <div class="image-container">
+                            <img src="@item.ImageUrl" alt="@item.Name" class="item-image" />
+                        </div>
+                        <div class="item-info">
+                            <p class="mt-2">@item.Name</p>
+                            @{
+                                var totalProductPrice = item.Price * item.Quantity;
+                            }
+                            <div class="item-price">
+                                $<span id="totalProductPrice_@item.ProductId">@totalProductPrice</span>
+                            </div>
+                        </div>
                     </div>
-                    <p id="stockWarning_@item.ProductId" class="text-danger" style="display: none;">There are only @item.Units units in the store.</p>
-                </td>
+                    <div class="item-buttons">
+                        <a asp-action="RemoveFromCart" asp-controller="Cart" asp-route-productId="@item.ProductId" class="remove-btn">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                        <div class="item-quantity">
+                            <button class="btn btn-outline-secondary decrement-btn" data-product-id="@item.ProductId" data-stock-units="@item.Units">-</button>
+                            <input type="text" id="quantity_@item.ProductId" value="@item.Quantity" class="form-control text-center" readonly style="max-width: 60px;">
+                            <button class="btn btn-outline-secondary increment-btn" data-product-id="@item.ProductId" data-stock-units="@item.Units">+</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
 
-                <td><img src="@item.ImageUrl" alt="@item.Name" style="width: 150px; height: auto;" /></td>
+        <!-- Right side: Order Summary -->
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div class="d-flex justify-content-between">
+                <p class="order-details-header">Subtotal </p>
+                <p class="subtotal">$@((ViewBag.CartTotalPrice)?.ToString("F2") ?? "0.00")</p>
+            </div>
 
+            <div class="d-flex justify-content-between border-bottom border-1 pb-2">
+                <p class="order-details-header">Delivery Fee </p>
+                <p class="Fee">$15</p>
+            </div>
+            <div class="d-flex justify-content-between pt-2 pb-3 total-price">
+                <p class="order-details-header">Total </p>
+                <p id="totalPrice">$@((ViewBag.CartTotalPrice + 15)?.ToString("F2") ?? "0.00")</p>
+            </div>
 
-                @{
-                    var totalProductPrice = item.Price * item.Quantity;
-                }
-                <td>$<span id="totalProductPrice_@item.ProductId">@totalProductPrice</span></td>
-                <td>
-                    <a asp-action="RemoveFromCart" asp-controller="Cart" asp-route-productId="@item.ProductId" class="btn btn-danger">Remove</a>
-                </td>
-            </tr>
-        }
-    </table>
+            <div class="d-flex flex-row align-items-stretch justify-content-between">
+                <input type="text" placeholder="Add promo code" class="form-control promo-code" style="width: 65%;" />
+                <button class="apply-btn btn btn-primary" style="width: 30%;">Apply</button>
+            </div>
 
-    <div class="cart-total">
-        <h3 id="totalPrice">Total Price: $@((ViewBag.CartTotalPrice as decimal?)?.ToString("F2") ?? "0.00")</h3>
-        <a id="checkoutButton" asp-action="checkOut" asp-controller="Order" class="btn btn-success">Checkout</a>
+            <a id="checkoutButton" asp-action="checkOut" asp-controller="Order" class="checkout-btn btn btn-primary">Go to Checkout</a>
+        </div>
     </div>
 }
 
@@ -77,16 +94,21 @@ else
 
             function updateTotalPrice() {
                 let totalPrice = 0;
-                $(".table-hover tbody tr").each(function () {
-                    const productPriceText = $(this).find('td:nth-child(5) span').text();
+
+                $(".cart-item").each(function () {
+                    const productPriceText = $(this).find('.item-price span').text();
                     const productPrice = parseFloat(productPriceText);
 
                     if (!isNaN(productPrice)) {
                         totalPrice += productPrice;
                     }
                 });
-                $("#totalPrice").text("Total Price: $" + totalPrice.toFixed(2));
+
+                $("#totalPrice").text("$" + totalPrice.toFixed(2));
+                $(".subtotal").text("$" + totalPrice.toFixed(2));
+
             }
+
 
             function disableCheckout() {
                 $("#checkoutButton").addClass("disabled");
@@ -166,4 +188,171 @@ else
         });
 
     </script>
+
+    <style>
+        .cart-header {
+            font-size: 1.9rem;
+            font-weight: 700
+        }
+
+        .cart-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .cart-items {
+            width: 60%;
+            border: solid #E6E6E6 1px;
+            border-radius: 10px
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .cart-item:not(:last-child) {
+            border-bottom: 1px solid #E6E6E6;
+        }
+
+        .item-details {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            height: 130px;
+        }
+
+        .item-image {
+            width: 140px;
+            margin: auto 0;
+            margin-right: 20px;
+        }
+
+        .item-info{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+        }
+
+        .item-info p {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .item-info .item-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .item-buttons{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 130px;
+            align-items:end;
+            margin-right: 20px;
+        }
+
+        .item-quantity {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity-input {
+            width: 40px;
+            text-align: center;
+            margin: 0 5px;
+        }
+
+        .remove-btn {
+            color: red;
+            cursor: pointer;
+            float: right;
+        }
+
+        .order-summary {
+            width: 35%;
+            height: fit-content;
+            padding: 20px;
+                border: 1px solid #E6E6E6;
+            border-radius: 5px;
+        }
+
+        .order-summary h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .order-summary p {
+            font-size: 17px;
+            margin: 10px 0;
+        }
+
+        .order-summary .order-details-header {
+            color: #666666
+        }
+
+        .order-summary .subtotal {
+            font-weight: 700;
+        }
+
+        .Fee {
+            font-weight: 700;
+        }
+
+        .total-price .order-details-header {
+            font-weight: 600;
+            color: #000
+        }
+
+        .total-price #totalPrice {
+            font-weight: 800;
+            font-size: 19px
+        }
+
+        .promo-code {
+            width: 100%;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            padding: 10px;
+            padding-left: 25px;
+                height: 100%
+            }
+
+        .apply-btn {
+            width: 100%;
+            background-color: #000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            border-radius: 30px;
+            padding: 10px;
+            height: 100%
+        }
+
+        .checkout-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #000;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            border-radius: 30px;
+         }
+    </style>
 }
