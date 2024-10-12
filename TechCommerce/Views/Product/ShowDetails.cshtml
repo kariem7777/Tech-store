@@ -4,39 +4,58 @@
     ViewData["Title"] = "ShowDetails";
 }
 
-<h1>Product Details</h1>
-<br />
-
-<!-- Alert for adding products -->
-<div class="alert alert-success alert-dismissible fade show" id="addToCartAlert" role="alert" style="display:none;">
-    Product added to cart successfully!
-</div>
-
-<!-- Alert for exceeding stock -->
-<div class="alert alert-warning alert-dismissible fade show" id="stockAlert" role="alert" style="display:none;">
-    The quantity selected exceeds the units in stock!
-</div>
-
-<div>
-    <h2>@Model.Name</h2>
-    <p><strong>ID:</strong> @Model.Id</p>
-    <p><strong>Name:</strong> @Model.Name</p>
-    <img src="@Model.ImageUrl" alt="@Model.Name" style="width: 250px; height: auto;" />
-    <p><strong>Units in Stock:</strong> @Model.Units</p>
-    <p><strong>Price:</strong> $<span id="totalPrice">@Model.Price</span></p>
-
-    <div class="input-group mt-2">
-        <span class="input-group-text">Count</span>
-        <button type="button" class="btn btn-outline-secondary" onclick="decrementQuantity(@Model.Id)">-</button>
-        <input type="text" id="quantity_@Model.Id" value="1" class="form-control text-center" readonly style="max-width: 60px;">
-        <button type="button" class="btn btn-outline-secondary" onclick="incrementQuantity(@Model.Id, @Model.Units)">+</button>
+<div class="container product-details">
+    <!-- Alert for adding products -->
+    <div class="alert alert-success alert-dismissible fade show" id="addToCartAlert" role="alert" style="display:none;">
+        Product added to cart successfully!
     </div>
 
-    @if (!User.IsInRole("Admin"))
-    {
-        <a onclick="addToCart(@Model.Id)" class="btn btn-success mt-4">Add To Cart</a>
-    }
+    <!-- Alert for exceeding stock -->
+    <div class="alert alert-warning alert-dismissible fade show" id="stockAlert" role="alert" style="display:none;">
+        The quantity selected exceeds the units in stock!
+    </div>
+
+    <div class="row pt-5">
+        <div class="col-md-6 text-center d-flex justify-content-center">
+            <!-- Product Image -->
+            <img src="@Model.ImageUrl" alt="@Model.Name" class="img-fluid" style="max-width: 80%; height: auto;" />
+        </div>
+
+        <div class="col-md-6 my-auto">
+            <!-- Product Name and Price -->
+            <h1>@Model.Name</h1>
+            <div class="price-section d-flex">
+                <span class="current-price">$@Model.Price</span>
+                <span class="old-price">
+                    @{
+                        string total = (Model.Price * 1.15M).ToString("0.00");
+                    }
+                    $@total
+                </span>
+                <span class="discount-badge my-auto ms-4">-15%</span>
+            </div>
+
+            <!-- Product Description -->
+            <p class="product-description">
+                @Model.Description
+            </p>
+
+            <!-- Quantity Selector -->
+            <div class="input-group mt-3 quantity-control">
+                <button type="button" class="btn btn-outline-secondary" onclick="decrementQuantity(@Model.Id)">-</button>
+                <input type="text" id="quantity_@Model.Id" value="1" class="form-control text-center" readonly style="max-width: 60px;">
+                <button type="button" class="btn btn-outline-secondary" onclick="incrementQuantity(@Model.Id, @Model.Units)">+</button>
+            </div>
+
+            <!-- Add to Cart Button -->
+            @if (!User.IsInRole("Admin"))
+            {
+                <button class="btn btn-dark mt-4 add-to-cart" onclick="addToCart(@Model.Id)">Add to Cart</button>
+            }
+        </div>
+    </div>
 </div>
+
 
 @section Scripts {
     <script type="text/javascript">
@@ -85,3 +104,61 @@
         }
     </script>
 }
+
+<style>
+    .product-details {
+        margin-top: 20px;
+    }
+
+    .price-section {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .current-price {
+        color: #333;
+        font-weight: bold;
+    }
+
+    .old-price {
+        text-decoration: line-through;
+        color: #aaa;
+        margin-left: 10px;
+    }
+
+    .discount {
+        color: red;
+        margin-left: 10px;
+    }
+
+    .product-description {
+        color: #666;
+        font-size: 16px;
+    }
+
+    .quantity-control button {
+        width: 40px;
+    }
+
+    .add-to-cart {
+        width: 100%;
+        background-color: #000;
+        color: white;
+        padding: 10px;
+    }
+
+    .add-to-cart:hover {
+        background-color: #333;
+    }
+
+    .discount-badge {
+        display: inline-block;
+        background-color: rgba(255, 0, 0, 0.1);
+        color: red;
+        font-size: 0.9rem;
+        font-weight: bold;
+        padding: 5px 12px;
+        border-radius: 20px;
+        margin-left: 10px;
+    }
+</style>
