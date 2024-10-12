@@ -13,6 +13,46 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\wwwroot\\images\\Categories\\Laptop.png",
+      "PackagePath": "staticwebassets\\images\\Categories\\Laptop.png"
+    },
+    {
+      "Id": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\wwwroot\\images\\Categories\\Speaker.png",
+      "PackagePath": "staticwebassets\\images\\Categories\\Speaker.png"
+    },
+    {
+      "Id": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\wwwroot\\images\\Categories\\gaming.png",
+      "PackagePath": "staticwebassets\\images\\Categories\\gaming.png"
+    },
+    {
+      "Id": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\wwwroot\\images\\Categories\\mobile.png",
+      "PackagePath": "staticwebassets\\images\\Categories\\mobile.png"
+    },
+    {
+      "Id": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\wwwroot\\images\\Footer\\applepay.svg",
+      "PackagePath": "staticwebassets\\images\\Footer\\applepay.svg"
+    },
+    {
+      "Id": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\wwwroot\\images\\Footer\\googlepay.svg",
+      "PackagePath": "staticwebassets\\images\\Footer\\googlepay.svg"
+    },
+    {
+      "Id": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\wwwroot\\images\\Footer\\mastercard.svg",
+      "PackagePath": "staticwebassets\\images\\Footer\\mastercard.svg"
+    },
+    {
+      "Id": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\wwwroot\\images\\Footer\\paypal.svg",
+      "PackagePath": "staticwebassets\\images\\Footer\\paypal.svg"
+    },
+    {
+      "Id": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\wwwroot\\images\\Footer\\visa.svg",
+      "PackagePath": "staticwebassets\\images\\Footer\\visa.svg"
+    },
+    {
+      "Id": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\wwwroot\\images\\Home\\Banner.png",
+      "PackagePath": "staticwebassets\\images\\Home\\Banner.png"
+    },
+    {
       "Id": "D:\\Courses\\.NET DEPI\\07 - Project\\Tech-store\\TechCommerce\\wwwroot\\images\\Stripe1.png",
       "PackagePath": "staticwebassets\\images\\Stripe1.png"
     },
