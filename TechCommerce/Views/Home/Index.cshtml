@@ -1,8 +1,309 @@
-﻿@{
+﻿@model List<Product>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Banner Section -->
+<div class="container container-fluid banner-section pt-5 pb-4">
+    <div class="row align-items-center mt-3">
+        <div class="col-md-6">
+            <h1 class="display-4 header">FIND DEVICE <br> THAT MATCHES <br> YOUR PASSION</h1>
+            <p class="lead mt-4">Browse through our diverse range of meticulously crafted devices, designed to bring out the best of innovation and technology.</p>
+            <div class="stats d-flex justify-content-between mt-4">
+                <div class="ms-0">
+                    <h3 class="font-weight-bold m-0">200+</h3>
+                    <p>International Brands</p>
+                </div>
+                <div class="">
+                    <h3 class="font-weight-bold m-0">2,000+</h3>
+                    <p>High-Quality Products</p>
+                </div>
+                <div class="">
+                    <h3 class="font-weight-bold m-0">30,000+</h3>
+                    <p>Happy Customers</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="~/images/Home/Banner.png" alt="Laptop image" class="img-fluid">
+        </div>
+    </div>
 </div>
+
+<!-- Brands Section -->
+<div class="brand-section text-center">
+    <div class="brand-logos d-flex justify-content-around align-items-center">
+        <span class="apple">APPLE</span>
+        <span class="samsung">SAMSUNG</span>
+        <span class="dell">DELL</span>
+        <span class="hp">HP</span>
+        <span class="sony">SONY</span>
+        <span class="microsoft">MICROSOFT</span>
+    </div>
+</div>
+
+<!-- Top Selling Section -->
+<div class="container mt-5">
+    <h2 class="text-center mb-5 pt-4 section-header">TOP SELLING</h2>
+    <div class="row">
+        @foreach (var product in Model.Take(4))
+        {
+            <div class="col-md-3 mb-4">
+                <a asp-action="ShowDetails" asp-controller="Product" asp-route-id="@product.Id" class="card-button">
+                    <div class="card h-100 text-center p-3">
+                        <img src="@product.ImageUrl" alt="@product.Name" class="card-img-top img-fluid pb-0 mb-0">
+                        <div class="card-body">
+                            <h5 class="card-title">@product.Name</h5>
+                            <div class="d-flex justify-content-center mb-2">
+                                <!-- Rating -->
+                                @* <span class="me-1">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            <span>@product.Rating / 5</span> *@
+                            </div>
+                            <div>
+                                <span class=" fw-bold">$@product.Price</span>
+                                <span class="text-muted text-decoration-line-through">$@product.Price</span>
+                                <span class="discount-badge">-15%</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+    <div class="text-center mt-3">
+        <a class="btn btn-outline-dark px-4" asp-area="" asp-controller="Product" asp-action="Index">View All</a>
+    </div>
+</div>
+
+<!-- Browse by Product Category Section -->
+<div class="container category-section mt-5">
+    <h2 class="text-center section-header mb-5 mt-5">BROWSE BY PRODUCT CATEGORY</h2>
+    <div class="row text-center mx-4">
+        <div class="col-md-4 mb-4">
+            <a asp-controller="Product" asp-action="Index" asp-route-searchQuery="" asp-route-categoryId="14" class="category-card">
+                <div class="card h-100">
+                    <h5 class="card-title">Laptops</h5>
+                    <div class="card-body Category-body">
+                        <img src="~/images/Categories/Laptop.png" alt="Laptops" class="card-img-bottom">
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-8 mb-4">
+            <a asp-controller="Product" asp-action="Index" asp-route-searchQuery="" asp-route-categoryId="15" class="category-card">
+                <div class="card h-100">
+                    <h5 class="card-title">Sounds & Headphones</h5>
+                    <div class="card-body Category-body">
+                        <img src="~/images/Categories/Speaker.png" alt="Sounds & Headphones" class="card-img-bottom">
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-7 mb-4">
+            <a asp-controller="Product" asp-action="Index" asp-route-searchQuery="" asp-route-categoryId="16" class="category-card">
+                <div class="card h-100">
+                    <h5 class="card-title">Gaming & Accessories</h5>
+                    <div class="card-body Category-body">
+                        <img src="~/images/Categories/gaming.png" alt="Gaming" class="card-img-bottom">
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-5 mb-4">
+            <a asp-controller="Product" asp-action="Index" asp-route-searchQuery="" asp-route-categoryId="16" class="category-card">
+                <div class="card h-100">
+                    <h5 class="card-title">Smartphones</h5>
+                    <div class="card-body Category-body">
+                      <img src="~/images/Categories/mobile.png" alt="Smartphones" class="card-img-bottom me-3">
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+    body {
+        background-color: #F2F0F1;
+    }
+
+    .stats div {
+        margin: 20px;
+    }
+
+        .stats div h3 {
+            color: #000;
+        }
+
+    .header {
+        font-weight: 800;
+        color: #000;
+        line-height: 55px;
+    }
+
+    .lead {
+        line-height: 22px;
+    }
+
+    .brand-section {
+        background-color: #000;
+        padding: 20px;
+        width: 100vw;
+        margin-left: calc(-50vw + 49%);
+    }
+
+    .brand-logos span {
+        color: white;
+        font-size: 1.8rem;
+        margin: 0 20px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    /* Different font styles for each brand */
+    .apple {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .samsung {
+        font-family: "Roboto", sans-serif;
+    }
+
+    .dell {
+        font-family: "Times New Roman", Times, serif;
+    }
+
+    .hp {
+        font-family: "Georgia", serif;
+    }
+
+    .sony {
+        font-family: "Futura", sans-serif;
+    }
+
+    .microsoft {
+        font-family: "Verdana", Geneva, sans-serif;
+    }
+
+    .brand-logos span:hover {
+        color: #1a73e8;
+    }
+
+    .section-header {
+        font-weight: 700;
+        font-size: 2.8rem;
+        align-content: center;
+        align-items: center;
+        margin: auto;
+        display: flex;
+        justify-content: center
+
+    }
+
+    .card {
+        border-radius: 15px;
+    }
+
+    .card-img-top {
+        max-height: 200px;
+        object-fit: contain;
+        margin-bottom: 15px;
+    }
+
+    .Category-body {
+        display: flex;
+        justify-content: end;
+    }
+
+    .Category-body h5 {
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+
+    .text-decoration-line-through {
+        margin-left: 10px;
+    }
+
+    .discount-badge {
+        display: inline-block;
+        background-color: rgba(255, 0, 0, 0.1); 
+        color: red;
+        font-size: 0.7rem;
+        font-weight: bold;
+        padding: 3px 10px;
+        border-radius: 20px;
+        margin-left: 10px;
+    }
+
+    .card-button {
+        text-decoration: none;
+        color: black;
+    }
+
+    .card-button:hover {
+            color: #999999;
+    }
+
+    @* Browse by product *@
+    .category-section {
+        background-color: #F0F0F0;
+        border-radius: 20px;
+        align-content: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center
+    }
+
+    .category-card {
+        text-decoration: none;
+        color: black;
+    }
+
+    .category-card:hover {
+        color: #555;
+    }
+
+    .category-card .card {
+        border: none
+    }
+
+    .card-body {
+        padding: 0;
+        overflow: hidden; 
+    }
+
+    .card-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-top: 15px;
+        margin-bottom: 25px;
+        text-align: start;
+        padding: 10px 0 0 36px;
+    }
+
+    .card-img-bottom {
+        height: auto;
+        max-height: 200px;
+         width: 100%;
+        object-fit: contain;
+        float: right;
+        margin-left: auto; 
+        padding: 0;
+        margin: 0;
+    }
+   
+    .card-body img {
+        width: auto;
+    }
+
+
+    .text-center h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+</style>

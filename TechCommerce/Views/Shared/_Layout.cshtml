@@ -1,53 +1,47 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @using TechCommerce.Models
 @inject SignInManager<Customer> SignInManager
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - TechCommerce</title>
+    <title>@ViewData["Title"] - PhoneTech</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="~/lib/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/TechCommerce.styles.css" asp-append-version="true" />
+    
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-light bg-white fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">TechCommerce</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">PhoneTech</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <div class="collapse navbar-collapse">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <li class="nav-item ps-3 pe-2">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Products</a>
+                        <li class="nav-item px-2">
+                            <a class="nav-link" asp-area="" asp-controller="Product" asp-action="Index">Featured Items</a>
                         </li>
                         @if (SignInManager.IsSignedIn(User))
                         {
-
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="Index">Orders</a>
+                            <li class="nav-item px-2">
+                                <a class="nav-link" asp-area="" asp-controller="Order" asp-action="Index">Track your order</a>
                             </li>
-                            @if (!User.IsInRole("Admin"))
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Cart" asp-action="Index">My Cart</a>
-                                </li>
-                            }
                         }
                         @if (User.IsInRole("Admin"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Categories</a>
+                                <a class="nav-link" asp-area="" asp-controller="Category" asp-action="Index">Categories</a>
                             </li>
                         }
                     </ul>
@@ -56,20 +50,268 @@
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+
+    <div class="container" style="margin-top: 80px;">
+        <main role="main" class="pb-2">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - TechCommerce - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="footer text-muted mt-5" style="background-color: #f5f5f5;">
+        <div class="container pt-5 pb-3">
+            <div class="row">
+                <!-- Newsletter -->
+                <div class="col-md-12 text-center mb-4">
+                    <div class="row align-items-center newsletter-box p-4 py-4" style="background-color: black; color: white;">
+                        <div class="col-md-6">
+                            <h3 class="Newsletter-txt ps-5">STAY UP TO DATE ABOUT <br /> OUR LATEST OFFERS</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <form class="d-flex flex-column  align-items-end mt-3 pe-5 px-5 pe-0 me-0">
+                                <input type="email" placeholder="Enter your email address" class="form-control mb-3 ps-4" style="width: 70%; border-radius: 30px;">
+                                <button type="submit" class="btn btn-light" style="width: 70%; border-radius: 30px; ">Subscribe to Newsletter</button>
+                            </form>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-5">
+                <!-- Footer Logo and Description -->
+                <div class="col-md-3 pe-4">
+                    <p class="footer-header pb-4 m-0">PhoneTech</p>
+                    <p class="Footer-Description">We have devices that suits your style and which you're proud to use.</p>
+                    <!-- Social Media Links -->
+                    <div class="mt-5">
+                        <a href="#" class="social-icon p-1 px-2 me-1"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon p-1 px-2 me-1"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon p-1 px-2 me-1"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon p-1 px-2 me-1"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="col-md-2">
+                    <h5 class="font-weight-bold mb-3">COMPANY</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="footer-link">About</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Features</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Works</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Career</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-2">
+                    <h5 class="font-weight-bold mb-3">HELP</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="footer-link">Customer Support</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Delivery Details</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Terms & Conditions</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-2">
+                    <h5 class="font-weight-bold mb-3">FAQ</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="footer-link">Account</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Manage Deliveries</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Orders</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Payments</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-2">
+                    <h5 class="font-weight-bold mb-3">RESOURCES</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="footer-link">Free eBooks</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Development Tutorial</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">How to - Blog</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">YouTube Playlist</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <hr />
+            </div>
+
+            <div class="d-flex flex-row justify-content-between">
+                <!-- Copyright -->
+                <div class="row mt-3">
+                    <div class="col-md-12 text-center">
+                        <p>&copy; 2024, PhoneTech, All Rights Reserved</p>
+                    </div>
+                </div>
+
+                <!-- Payment Methods -->
+                <div class="row mt-0">
+                    <div class="col-md-12 text-center">
+                        <div class="card d-inline-block border-0 shadow-sm me-3">
+                            <img src="~/images/Footer/visa.svg" alt="Visa" style="width: 40px;" class="mx-2">
+                        </div>
+                        <div class="card d-inline-block border-0 shadow-sm me-3">
+                            <img src="~/images/Footer/mastercard.svg" alt="mastercard" style="width: 40px;" class="mx-2 px-1">
+                        </div>
+                        <div class="card d-inline-block border-0 shadow-sm me-3">
+                            <img src="~/images/Footer/paypal.svg" alt="PayPal" style="width: 40px;" class="mx-2">
+                        </div>
+                        <div class="card d-inline-block border-0 shadow-sm me-3">
+                            <img src="~/images/Footer/applepay.svg" alt="Apple Pay" style="width: 40px;" class="mx-2">
+                        </div>
+                        <div class="card d-inline-block border-0 shadow-sm me-3">
+                            <img src="~/images/Footer/googlepay.svg" alt="Google Pay" style="width: 40px;" class="mx-2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
         </div>
     </footer>
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        // Change navbar styles on scroll
+        window.onscroll = function () {
+            var navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        };
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+<style>
+    .navbar {
+        padding: 10px 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        font-weight: bold;
+    }
+
+    .navbar-brand {
+        font-size: 26px;
+        font-weight: 900;
+        color: #007bff;
+    }
+
+    .navbar .nav-link {
+        color: #000;
+        padding: 10px 15px;
+        font-weight: 500;
+    }
+
+        .navbar .nav-link:hover {
+            color: #007bff;
+        }
+
+    .navbar .navbar-collapse {
+        justify-content: space-between;
+    }
+
+    /* Add scroll effect to change background color */
+    .navbar.scrolled {
+        padding: 5px 20px;
+        background-color: #007bff;
+        transition: background-color 0.3s, padding 0.3s;
+    }
+
+    .search-bar {
+        max-width: 300px;
+        width: 100%;
+        margin-right: 15px;
+        border-radius: 25px;
+    }
+
+    .icon-btn i {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .icon-btn:hover {
+        color: #007bff;
+    }
+
+    .navbar > div {
+        padding: 0 100px 0 100px;
+    }
+
+    .footer h5 {
+        color: #000;
+        font-size: 18px;
+    }
+
+    .footer ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .footer .newsletter-box {
+        background-color: black;
+        padding: 30px;
+        color: white;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+        .footer .newsletter-box form {
+            margin-top: 15px;
+        }
+
+            .footer .newsletter-box form input,
+            .footer .newsletter-box form button {
+                padding: 10px 20px;
+                border-radius: 30px;
+                margin-right: 5px;
+            }
+
+            .footer .newsletter-box form button {
+                background-color: white;
+                color: black;
+            }
+
+    .footer .Newsletter-txt {
+        text-align: start;
+        font-weight: 800;
+        font-size: 2.5rem
+    }
+
+    .footer-header {
+        font-weight: 900;
+        font-size: 2rem;
+        color: black;
+        line-height: 20px;
+    }
+
+    .Footer-Description {
+        line-height: 20px;
+        font-weight: 300;
+        color: #606060;
+    }
+
+    .social-icon {
+        border: solid #CCCCCC 1px;
+        border-radius: 50%; /* Ensure circular shape */
+        font-size: 18px; /* Adjust the icon size */
+        color: #000;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .footer-link {
+        color: #606060;
+        font-weight: 300
+    }
+
+</style>
