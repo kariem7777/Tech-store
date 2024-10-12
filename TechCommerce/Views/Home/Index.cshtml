@@ -61,8 +61,14 @@
                             <span>@product.Rating / 5</span> *@
                             </div>
                             <div>
+
                                 <span class=" fw-bold">$@product.Price</span>
-                                <span class="text-muted text-decoration-line-through">$@product.Price</span>
+                                <span class="text-muted text-decoration-line-through">
+                                    @{
+                                        string total = (product.Price * 1.15M).ToString("0.00");
+                                    }
+                                    $@total
+                                </span>
                                 <span class="discount-badge">-15%</span>
                             </div>
                         </div>
