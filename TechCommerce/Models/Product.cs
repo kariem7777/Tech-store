@@ -22,6 +22,7 @@ namespace TechCommerce.Models
 
         public ICollection<CartProducts> CaPr { get; set; } = new HashSet<CartProducts>();
         public ICollection<OrderProduct> OrPr { get; set; } = new HashSet<OrderProduct>();
+        public ICollection<ProductRate> Prate { get; set; } = new HashSet<ProductRate>();
 
 
     }

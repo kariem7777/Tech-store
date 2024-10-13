@@ -51,13 +51,13 @@ namespace TechCommerce.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "6c7243a6-b002-42f5-ac1e-47420e8d2a70",
+                            Id = "4a6860fe-70d6-4a72-9717-19b7be2ec09a",
                             Name = "Admin",
                             NormalizedName = "admin"
                         },
                         new
                         {
-                            Id = "8daf950a-1458-4a22-b9c0-d02fb579369e",
+                            Id = "6a1e0597-b6dc-47b8-8462-e66ed42cfab4",
                             Name = "Client",
                             NormalizedName = "client"
                         });
@@ -419,6 +419,37 @@ namespace TechCommerce.Data.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("TechCommerce.Models.ProductRate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CustomerComment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Rate")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Rates");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -552,6 +583,17 @@ namespace TechCommerce.Data.Migrations
                     b.Navigation("category");
                 });
 
+            modelBuilder.Entity("TechCommerce.Models.ProductRate", b =>
+                {
+                    b.HasOne("TechCommerce.Models.Product", "product")
+                        .WithMany("Prate")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("product");
+                });
+
             modelBuilder.Entity("TechCommerce.Models.Cart", b =>
                 {
                     b.Navigation("CaPr");
@@ -580,6 +622,8 @@ namespace TechCommerce.Data.Migrations
                     b.Navigation("CaPr");
 
                     b.Navigation("OrPr");
+
+                    b.Navigation("Prate");
                 });
 #pragma warning restore 612, 618
         }

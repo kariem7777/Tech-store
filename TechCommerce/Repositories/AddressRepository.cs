@@ -1,9 +1,10 @@
-﻿using Stripe;
+﻿
 using TechCommerce.Data;
+using TechCommerce.Models;
 
 namespace TechCommerce.Repositories
 {
-    public class AddressRepository : GenericRepository<Address>
+    public class AddressRepository : GenericRepository<Address>, IAddressRepository
     {
         private readonly ApplicationDbContext context;
 
@@ -11,9 +12,11 @@ namespace TechCommerce.Repositories
         {
             context = _context;
         }
-        //public List<Address> GetaddressOfCustomer(String id)
-        //{
-        //    return context.Addresses?.Where(A => A.CustomerId == id).ToList() ?? new List<Address>();
-        //}
+
+        public List<Address> GetAllById(string id)
+        {
+            return context.Addresses.Where(A=>A.CustomerId == id).ToList();
+        }
+        
     }
 }

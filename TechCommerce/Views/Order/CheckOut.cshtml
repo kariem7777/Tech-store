@@ -4,7 +4,7 @@
     <h2 class="text-center my-4 pt-4 shiping-header">Select a Shipping Address</h2>
     <div class="d-flex justify-content-between align-items-center mb-4">
         <p class="text-muted">Please select from your saved addresses or add a new one.</p>
-        <a asp-action="AddAddress" asp-controller="User" asp-route-returnUrl="@Url.Action("CheckOut", "Order")" class="btn btn-dark">
+        <a asp-action="AddUpdataAddress" asp-controller="User" asp-route-returnUrl="@Url.Action("CheckOut", "Order")" class="btn btn-dark">
             <i class="fas fa-plus"></i> Add Address
         </a>
     </div>

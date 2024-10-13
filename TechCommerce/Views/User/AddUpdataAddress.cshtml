@@ -8,7 +8,7 @@
 
 <form method="post">
     <input type="text" name="returnUrl" value="@ViewBag.returnUrl" hidden />
-
+    <input type="hidden" asp-for="Id"  hidden />
     <div class="mt-4">
         <label asp-for="Name" class="mb-1 fw-bold"></label>
         <input asp-for="Name" class="form-control w-50" />
@@ -33,5 +33,5 @@
         <span asp-validation-for="Country" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-dark mt-4 px-3">Save</button>
+    <button type="submit" class="btn btn-dark mt-4 px-3">@(Model.Id==0?"Add":"Update")</button>
 </form>

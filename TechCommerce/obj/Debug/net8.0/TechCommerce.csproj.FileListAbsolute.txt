@@ -1422,3 +1422,8 @@ D:\Courses\.NET DEPI\07 - Project\Tech-store\TechCommerce\obj\Debug\net8.0\ref\T
 D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\Stripe.net.dll
 D:\Courses\.NET DEPI\Tech-store\TechCommerce\bin\Debug\net8.0\Stripe.net.dll
 D:\Courses\.NET DEPI\07 - Project\Tech-store\TechCommerce\bin\Debug\net8.0\Stripe.net.dll
+D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+D:\.Net\Project\Tech-store\TechCommerce\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll

@@ -53,6 +53,41 @@
                 <button class="btn btn-dark mt-4 add-to-cart" onclick="addToCart(@Model.Id)">Add to Cart</button>
             }
         </div>
+        <section>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-10 col-xl-8 text-center">
+                    <h3 class="mb-4">Reviews</h3>
+                   
+                </div>
+            </div>
+
+            <div class="row text-center">
+                @foreach(var rate in Model.Prate)
+                {
+                    <div class="col-md-4 mb-5 mb-md-0">
+
+                        <h5 class="mb-3">@rate.CustomerName</h5>
+                        <h6 class="text-primary mb-3">Customer</h6>
+                        <p class="px-xl-3">
+                            <i class="fas fa-quote-left pe-2"></i>@rate.CustomerComment
+                        </p>
+                        <ul class="list-unstyled d-flex justify-content-center mb-0">
+                            @for(int i = 1; i <= 5; ++i)
+                            {
+                                <li>
+
+                                    <i class="@(i<rate.Rate?"fas":"far") fa-star fa-sm text-warning"></i>
+                                </li>
+                            }
+                           
+                           
+                        </ul>
+                    </div>
+                }
+                
+               
+            </div>
+        </section>
     </div>
 </div>
 

@@ -25,6 +25,8 @@ builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositor
 //builder.Services.AddScoped<IGenericRepository<TechCommerce.Models.Address>, AddressRepository>();
 builder.Services.AddScoped<ICartProductsRepository, CartProductsRepository>();
 builder.Services.AddScoped<IOrderProductRepository, OrderProductRepository>();
+builder.Services.AddScoped<IproductRepository, ProductRepository>();
+builder.Services.AddScoped<IAddressRepository, AddressRepository>();
 
 
 

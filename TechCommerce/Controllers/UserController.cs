@@ -8,20 +8,28 @@ namespace TechCommerce.Controllers
     public class UserController : Controller
     {
         private readonly UserManager<Customer> usrmngr;
-        private readonly IGenericRepository<Address> AddressRepository;
+        private readonly IAddressRepository AddressRepository;
 
-        public UserController(UserManager<Customer> usrmngr, IGenericRepository<Address> addrRepo)
+        public UserController(UserManager<Customer> usrmngr, IAddressRepository addrRepo)
         {
             this.usrmngr = usrmngr;
             AddressRepository = addrRepo;
         }
-        public IActionResult AddAddress(string returnUrl = null)
+        public IActionResult AddUpdataAddress(int? id,string returnUrl = null)
         {
             ViewBag.returnUrl = returnUrl;
-            return View();
+            if (id == null || id == 0) { 
+                
+                return View(new Address());
+            }
+            else
+            {
+                Address ad = AddressRepository.GetById(id.Value);
+                return View(ad);
+            }
         }
         [HttpPost]
-        public IActionResult AddAddress(Address A, string returnUrl = null)
+        public IActionResult AddUpdataAddress(Address A, string returnUrl = null)
         {
             ModelState.Remove(nameof(A.CustomerId));
             ModelState.Remove(nameof(A.Customer));
@@ -33,17 +41,44 @@ namespace TechCommerce.Controllers
             }
             var userId = usrmngr.GetUserId(User);
             A.CustomerId = userId;
-            AddressRepository.Add(A);
-            AddressRepository.Save();
-            if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+            if (A.Id == 0)
             {
-                return Redirect(returnUrl);
+
+                
+                AddressRepository.Add(A);
+                AddressRepository.Save();
+                if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                    {
+                        return Redirect(returnUrl);
+                    }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                AddressRepository.Update(A);
+                AddressRepository.Save();
+                List<Address> addresses = AddressRepository.GetAllById(usrmngr.GetUserId(User));
+                return View("ShowAddresses", addresses);
             }
 
         }
+        public IActionResult ShowAddresses()
+        {
+            List<Address> addresses=AddressRepository.GetAllById(usrmngr.GetUserId(User));
+            return View(addresses);
+        }
+        public IActionResult DeleteAddress(int id)
+        {
+
+            AddressRepository.Delete(id);
+            AddressRepository.Save();
+            List<Address> addresses = AddressRepository.GetAllById(usrmngr.GetUserId(User));
+            return View("ShowAddresses", addresses);
+        }
+
+
     }
 }

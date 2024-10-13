@@ -1,0 +1,30 @@
+﻿@model ProductRate
+
+<div class="modal fade" id="ratingModal_@Model.ProductId" tabindex="-1" role="dialog" aria-labelledby="ratingModalLabel_@Model.ProductId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ratingModalLabel_@Model.ProductId">Rate the Product</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="ratingForm_@Model.ProductId" method="post">
+                    <input type="hidden" name="ProductId" value="@Model.ProductId" />
+                    <input type="hidden" name="UserId" value="@Model.UserId" />
+                    <div class="form-group">
+                        <label for="Score">Rating</label>
+                        <input type="number" class="form-control" name="Score" min="1" max="5" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="Review">Review</label>
+                        <textarea class="form-control" name="Review" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

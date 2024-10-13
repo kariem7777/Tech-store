@@ -172,6 +172,8 @@
 
             
         </div>
+        
+
     </footer>
 
 
@@ -187,6 +189,100 @@
                 navbar.classList.remove('scrolled');
             }
         };
+
+
+        $(document).ready(function () {
+            var userId = $('#UserId').val()
+            $.ajax({
+                url: '/Rating/GetUnratedProducts',
+                type: 'GET',
+                success: function (data) {
+                   
+                    if (data.length > 0) {
+                        // Assuming 'data' contains the unrated products retrieved from your AJAX request
+                        data.forEach(function (product) {
+                            
+                            var ratingForm = `
+                        <div class="modal fade" id="ratingModal_${product.productId}" tabindex="-1" role="dialog" aria-labelledby="ratingModalLabel_${product.productId}" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div class="img-container">
+                                                   <img src="${product.imageUrl}" alt="${product.name}" class="card-img-top img-fluid pb-0 mb-0">
+                                        </div>
+                                        <h5 class="modal-title" id="ratingModalLabel_${product.productId}">Rate Product : ${product.name}</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="ratingForm_${product.productId}" method="post">
+                                                    <input type="hidden" name="ProductId" value="${product.productId}" />
+                                                    <input type="hidden" name="UserId" value="${product.userId}" /> <!-- Ensure userId is defined -->
+                                            <div class="form-group">
+                                                <label for="Score">Rating</label>
+                                                <input type="number" class="form-control" name="Score" min="1" max="5" required />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Review">Review</label>
+                                                <textarea class="form-control" name="Review" rows="3"></textarea>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+            `;
+                            $('body').append(ratingForm); // Append to body or a specific container
+                            $('#ratingModal_' + product.productId).modal('show'); // Show the modal
+                        });
+
+                    }
+                },
+                error: function (xhr) {
+                    console.log('Error retrieving unrated products:', xhr.responseText);
+                }
+            });
+
+            // Handle form submissions
+            // Handle form submissions
+            $(document).on('submit', '[id^="ratingForm_"]', function (e) {
+                e.preventDefault(); // Prevent default form submission
+
+                // Get the values from the form
+                var productId = $(this).find('input[name="ProductId"]').val();
+                var userId = $(this).find('input[name="UserId"]').val(); 
+                var score = $(this).find('input[name="Score"]').val();
+                var review = $(this).find('textarea[name="Review"]').val();
+
+               
+                // AJAX call to submit the rating
+                $.ajax({
+                    url: '/Rating/SubmitRating', // Adjust your endpoint accordingly
+                    type: 'POST',
+                    data: {
+                        ProductId: productId,
+                        UserId: userId,
+                        Rate: score,
+                        CustomerComment: review
+                    },
+                    success: function (response) {
+                        console.log('Rating submitted successfully:', response);
+                        // Close modal or provide feedback
+                        $('#ratingModal_' + productId).modal('hide');
+                    },
+                    error: function (xhr) {
+                        console.error('Error submitting rating:', xhr.responseText);
+                        // Handle the error, e.g., show a message to the user
+                    }
+                });
+            });
+
+
+        });
+
     </script>
 
     @await RenderSectionAsync("Scripts", required: false)

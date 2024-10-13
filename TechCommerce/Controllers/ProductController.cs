@@ -8,10 +8,10 @@ namespace TechCommerce.Controllers
 {
     public class ProductController : Controller
     {
-        IGenericRepository<Product> ProductRepository;
+        IproductRepository ProductRepository;
         IGenericRepository<Category> CategoryRepository;
 
-        public ProductController(IGenericRepository<Product> ProductRepo, IGenericRepository<Category> categoryRepository)  //Inject
+        public ProductController(IproductRepository ProductRepo, IGenericRepository<Category> categoryRepository)  //Inject
         {
             ProductRepository = ProductRepo;
             CategoryRepository = categoryRepository;
@@ -58,8 +58,8 @@ namespace TechCommerce.Controllers
         [Authorize]
         public IActionResult ShowDetails(int id)
         {
-            Product? product = ProductRepository.GetById(id);
-
+            Product? product = ProductRepository.GetWithRates(id);
+            
             return product != null ? View("ShowDetails", product) : NotFound();
         }
 
