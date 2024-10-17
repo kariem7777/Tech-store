@@ -28,11 +28,8 @@ builder.Services.AddScoped<IOrderProductRepository, OrderProductRepository>();
 builder.Services.AddScoped<IproductRepository, ProductRepository>();
 builder.Services.AddScoped<IAddressRepository, AddressRepository>();
 
-
-
 StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe:SecretKey").Value;
 var app = builder.Build();
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
