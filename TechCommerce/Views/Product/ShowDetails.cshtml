@@ -53,35 +53,31 @@
                 <button class="btn btn-dark mt-4 add-to-cart" onclick="addToCart(@Model.Id)">Add to Cart</button>
             }
         </div>
+        <hr />
         <section>
-            <div class="row d-flex justify-content-center">
+            <div class="row d-flex justify-content-center mt-3">
                 <div class="col-md-10 col-xl-8 text-center">
-                    <h3 class="mb-4">Reviews</h3>
-                   
+                    <h3 class="mb-4 fw-bold">Rating & Reviews</h3>
                 </div>
             </div>
 
             <div class="row text-center">
                 @foreach(var rate in Model.Prate)
                 {
-                    <div class="col-md-4 mb-5 mb-md-0">
-
-                        <h5 class="mb-3">@rate.CustomerName</h5>
-                        <h6 class="text-primary mb-3">Customer</h6>
-                        <p class="px-xl-3">
-                            <i class="fas fa-quote-left pe-2"></i>@rate.CustomerComment
-                        </p>
-                        <ul class="list-unstyled d-flex justify-content-center mb-0">
-                            @for(int i = 1; i <= 5; ++i)
+                    <div class="col-md-4 mb-5 mb-md-0 text-start rate-container p-3 pb-2 px-4 mx-1">
+                        <ul class="list-unstyled d-flex justify-content-center mb-0 stars-container">
+                            @for (int i = 1; i <= 5; ++i)
                             {
                                 <li>
-
-                                    <i class="@(i<rate.Rate?"fas":"far") fa-star fa-sm text-warning"></i>
+                                    <i class="@(i<=rate.Rate?"fas":"far") fa-star fa-sm text-warning me-1"></i>
                                 </li>
                             }
-                           
-                           
                         </ul>
+                        <h5 class="fw-bold p-0 m-0 pt-2">@rate.CustomerName</h5>
+                        <h6 class="text-primary p-0">Customer</h6>
+                        <p class="">
+                            <i class="fas fa-quote-left pe-2 comment"></i>@rate.CustomerComment
+                        </p>
                     </div>
                 }
                 
@@ -195,5 +191,23 @@
         padding: 5px 12px;
         border-radius: 20px;
         margin-left: 10px;
+    }
+
+    .rate-container {
+        border: solid 1px #E6E6E6;
+        border-radius: 20px;
+        min-width: 240px;
+    }
+
+    .stars-container {
+        width: fit-content;
+    }
+
+    .fa-star {
+        font-size: 1.1rem
+    }
+
+    .comment {
+        color: #666666
     }
 </style>
